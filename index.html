@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Autoclave Calculator | Poli International">
+    <meta property="og:description" content="Calculate sterilization cycles and timing for autoclave equipment. Professional tool for tattoo and piercing studios.">
+    <meta property="og:url" content="https://poliinternational.com/autoclave-calculator/">
+    <meta property="og:site_name" content="Poli International">
+    <meta property="og:image" content="https://poliinternational.com/wp-content/uploads/poli-tools-preview.jpg">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Autoclave Calculator | Poli International">
+    <meta name="twitter:description" content="Calculate sterilization cycles and timing for autoclave equipment. Professional tool for tattoo and piercing studios.">
+    <meta name="twitter:image" content="https://poliinternational.com/wp-content/uploads/poli-tools-preview.jpg">
+    <meta property="og:image" content="https://poliinternational.com/wp-content/uploads/poli-tools-preview.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tattoo & Piercing Autoclave Sterilization Calculator. Calculate correct cycle times, track spore tests, and maintain compliance with state regulations. Free tool for tattoo and piercing studios.">
+    <meta name="keywords" content="tattoo autoclave calculator, piercing autoclave, sterilization time calculator, spore test tracker, tattoo sterilization, piercing sterilization, CDC compliance, autoclave compliance">
+    <title>Tattoo & Piercing Autoclave Sterilization Calculator | Free Tool by Poli International</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/print.css" media="print">
+<script type='application/ld+json'>
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Autoclave Sterilization Calculator",
+  "url": "https://poliinternational.com/tools/autoclave-calculator/",
+  "description": "Calculate sterilization parameters for autoclave cycles",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript. Requires HTML5.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "codeRepository": "https://github.com/poli-international/autoclave-calculator",
+  "author": {
+    "@type": "Organization",
+    "name": "Poli International",
+    "url": "https://poliinternational.com",
+    "sameAs": [
+      "https://github.com/poli-international"
+    ]
+  },
+  "creator": {
+    "@type": "Organization",
+    "name": "Poli International",
+    "url": "https://poliinternational.com"
+  },
+  "maintainer": {
+    "@type": "Organization",
+    "name": "Poli International",
+    "url": "https://poliinternational.com"
+  },
+  "dateModified": "2026-02-07",
+  "license": "https://opensource.org/licenses/MIT",
+  "isAccessibleForFree": true
+}
+</script>
+
+<style>
+/* Breadcrumb Styles */
+.breadcrumb-nav {
+    padding: 1rem 0;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.breadcrumb-nav a {
+    color: #0693e3;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.breadcrumb-nav a:hover {
+    color: #0575be;
+    text-decoration: underline;
+}
+
+.breadcrumb-nav span {
+    color: #666;
+    margin: 0 0.5rem;
+}
+
+.breadcrumb-nav strong {
+    color: #333;
+}
+
+/* Dark mode breadcrumb */
+body.dark-mode .breadcrumb-nav span {
+    color: #999;
+}
+
+body.dark-mode .breadcrumb-nav a {
+    color: #60a5fa;
+}
+
+body.dark-mode .breadcrumb-nav strong {
+    color: #e0e0e0;
+}
+</style>
+</head>
+<body>
+<nav class="breadcrumb-nav" aria-label="Breadcrumb">
+    <a href="https://poliinternational.com/">Home</a>
+    <span>›</span>
+    <a href="https://poliinternational.com/tools/">Tools</a>
+    <span>›</span>
+    <a href="https://poliinternational.com/tools/#studio-management">Studio Management</a>
+    <span>›</span>
+    <strong>Autoclave Calculator</strong>
+</nav>
+
+    <!-- Top Navigation Header (matching homepage style) -->
+    <header class="site-header">
+        <div class="site-header__container">
+            <a href="https://poliinternational.com/" class="site-header__logo-link">
+                <img src="images/Poli-International-Co.webp" alt="Poli International" class="site-header__logo">
+            </a>
+            <nav class="site-nav">
+                <a href="https://poliinternational.com/" class="site-nav__link">HOME</a>
+                <a href="https://poliinternational.com/who-we-are/" class="site-nav__link">ABOUT</a>
+                <a href="https://poliinternational.com/our-creation/" class="site-nav__link">INNOVATION</a>
+                <a href="https://poliinternational.com/they-trust-us/" class="site-nav__link">They trust us!</a>
+                <a href="https://poliinternational.com/contact-us/" class="site-nav__link">CONTACT</a>
+            </nav>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Tool Title Section -->
+    <section class="tool-title-section">
+        <div class="container">
+            <h1 class="tool-title">Professional Autoclave Calculator & Sterilization Timer</h1>
+<!-- GitHub CTA -->
+<div class='github-cta' style='margin: 1.5rem 0;'>
+  <a href='https://github.com/poli-international/autoclave-calculator' 
+     target='_blank' rel='noopener noreferrer' class='btn-github' 
+     style='display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; background: #24292e; color: #ffffff; border-radius: 6px; text-decoration: none; font-weight: 500;'>
+    <svg width='20' height='20' viewBox='0 0 16 16' fill='currentColor'>
+      <path d='M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z'/>
+    </svg>
+    <span>View on GitHub</span>
+  </a>
+</div>
+<!-- GitHub Stats -->
+<div class='github-stats' style='display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 1rem 0;'>
+  <img src='https://img.shields.io/github/stars/poli-international/autoclave-calculator?style=social' alt='Stars' loading='lazy'>
+  <img src='https://img.shields.io/github/last-commit/poli-international/autoclave-calculator' alt='Last commit' loading='lazy'>
+</div>
+
+            <p class="tool-subtitle">Calculate precise sterilization cycles • Track autoclave performance • Professional safety standards</p>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════════
+         HEADER
+    ═══════════════════════════════════════════════════════════ -->
+    <header class="autoclave__header">
+        <div class="autoclave__header-content">
+            <!-- Logo -->
+            
+
+            <!-- Title -->
+            <div class="autoclave__title-container">
+                <h2 class="autoclave__main-title">Tattoo & Piercing Autoclave Sterilization Calculator</h2>
+                <p class="autoclave__subtitle">Calculate cycles, track spore tests, maintain compliance for tattoo & piercing studios</p>
+            </div>
+
+            <!-- Header Controls -->
+            <div class="autoclave__header-controls">
+                <!-- Embed Button -->
+                <button id="embed-button" class="autoclave__embed-button" aria-label="Get embed code">
+                    <span class="autoclave__embed-icon">⚡</span>
+                    <span class="autoclave__embed-text">Free Embed</span>
+                </button>
+
+                <!-- Ko-fi Button -->
+                <a href='https://ko-fi.com/C0C81NEXBV' target='_blank' class="autoclave__kofi-button">
+                    <span class="kofi-icon">☕</span>
+                    <span class="kofi-text">Buy Me a Coffee</span>
+                </a>
+
+                <!-- Dark Mode Toggle -->
+                <button id="dark-mode-toggle" class="autoclave__dark-mode-toggle" aria-label="Toggle dark mode">
+                    <span class="autoclave__dark-mode-icon">🌙</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         MAIN CONTENT
+    ═══════════════════════════════════════════════════════════ -->
+    <main class="autoclave__main">
+        <div class="autoclave__container">
+
+            <!-- ═══════════════════════════════════════════════════════════
+                 STERILIZATION CYCLE CALCULATOR
+            ═══════════════════════════════════════════════════════════ -->
+            <section class="autoclave__section autoclave__calculator-section">
+                <div class="autoclave__section-header">
+                    <h2 class="autoclave__section-title">
+                        <span class="autoclave__section-icon">🌡️</span>
+                        Sterilization Cycle Calculator
+                    </h2>
+                    <p class="autoclave__section-description">
+                        Calculate correct temperature, pressure, and time for your autoclave type and load
+                    </p>
+                </div>
+
+                <form id="calculator-form" class="autoclave__calculator-form">
+                    <div class="autoclave__form-grid">
+                        <!-- Autoclave Type -->
+                        <div class="autoclave__form-group autoclave__form-group--full">
+                            <label for="autoclave-type" class="autoclave__label">
+                                <span class="autoclave__label-icon">🔬</span>
+                                Autoclave Type
+                            </label>
+                            <select id="autoclave-type" class="autoclave__select" required>
+                                <option value="">Select autoclave type...</option>
+                                <option value="gravity">Gravity Displacement (Type N) - e.g., Ritter M9</option>
+                                <option value="prevacuum">Pre-Vacuum (Type B) - e.g., Midmark M11, Tuttnauer</option>
+                                <option value="chemical">Chemical Vapor - e.g., Harvey Chemiclave</option>
+                            </select>
+                            <p class="autoclave__help-text">Choose your autoclave type. Check your manual if unsure.</p>
+                        </div>
+
+                        <!-- Load Type -->
+                        <div class="autoclave__form-group">
+                            <label for="load-type" class="autoclave__label">
+                                <span class="autoclave__label-icon">📦</span>
+                                Load Type
+                            </label>
+                            <select id="load-type" class="autoclave__select" required>
+                                <option value="">Select load type...</option>
+                                <optgroup label="Solid Instruments">
+                                    <option value="wrapped">Wrapped Instruments (pouched)</option>
+                                    <option value="unwrapped">Unwrapped Instruments (flash)</option>
+                                </optgroup>
+                                <optgroup label="Special Items">
+                                    <option value="hollow">Hollow Instruments (requires pre-vacuum)</option>
+                                    <option value="textiles">Textiles (towels, drapes)</option>
+                                    <option value="glass">Glass Items</option>
+                                    <option value="liquids">Liquids (requires special cycle)</option>
+                                </optgroup>
+                            </select>
+                        </div>
+
+                        <!-- Load Size -->
+                        <div class="autoclave__form-group">
+                            <label for="load-size" class="autoclave__label">
+                                <span class="autoclave__label-icon">📏</span>
+                                Load Size
+                            </label>
+                            <select id="load-size" class="autoclave__select" required>
+                                <option value="">Select load size...</option>
+                                <option value="small">Small (25% capacity)</option>
+                                <option value="medium">Medium (50% capacity)</option>
+                                <option value="large">Large (75% capacity)</option>
+                                <option value="full">Full (100% capacity - not recommended)</option>
+                            </select>
+                        </div>
+
+                        <!-- Instrument Material -->
+                        <div class="autoclave__form-group">
+                            <label for="instrument-material" class="autoclave__label">
+                                <span class="autoclave__label-icon">🔧</span>
+                                Instrument Material
+                            </label>
+                            <select id="instrument-material" class="autoclave__select" required>
+                                <option value="">Select material...</option>
+                                <option value="steel">Stainless Steel</option>
+                                <option value="titanium">Titanium</option>
+                                <option value="glass">Glass</option>
+                                <option value="mixed">Mixed Materials</option>
+                                <option value="carbon">Carbon Steel (requires chemical vapor)</option>
+                            </select>
+                        </div>
+
+                        <!-- Wrapping Status -->
+                        <div class="autoclave__form-group">
+                            <label for="wrapping-status" class="autoclave__label">
+                                <span class="autoclave__label-icon">📋</span>
+                                Wrapping Status
+                            </label>
+                            <select id="wrapping-status" class="autoclave__select" required>
+                                <option value="">Select status...</option>
+                                <option value="wrapped">Wrapped (pouched for storage)</option>
+                                <option value="unwrapped">Unwrapped (immediate use only)</option>
+                            </select>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="autoclave__form-group autoclave__form-group--full">
+                            <button type="submit" class="autoclave__calculate-button">
+                                <span class="autoclave__button-icon">⚡</span>
+                                Calculate Sterilization Cycle
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- Results Display -->
+                <div id="calculator-results" class="autoclave__results" style="display: none;">
+                    <div class="autoclave__results-header">
+                        <h3 class="autoclave__results-title">Sterilization Parameters</h3>
+                        
+                    </div>
+
+                    <div class="autoclave__results-grid">
+                        <!-- Temperature -->
+                        <div class="autoclave__result-card autoclave__result-card--temperature">
+                            <div class="autoclave__result-icon">🌡️</div>
+                            <div class="autoclave__result-label">Temperature</div>
+                            
+                            <div class="autoclave__result-sublabel">Required</div>
+                        </div>
+
+                        <!-- Pressure -->
+                        <div class="autoclave__result-card autoclave__result-card--pressure">
+                            <div class="autoclave__result-icon">⚙️</div>
+                            <div class="autoclave__result-label">Pressure</div>
+                            
+                            <div class="autoclave__result-sublabel">PSI</div>
+                        </div>
+
+                        <!-- Exposure Time -->
+                        <div class="autoclave__result-card autoclave__result-card--time">
+                            <div class="autoclave__result-icon">⏱️</div>
+                            <div class="autoclave__result-label">Exposure Time</div>
+                            
+                            <div class="autoclave__result-sublabel">Minimum</div>
+                        </div>
+
+                        <!-- Total Cycle Time -->
+                        <div class="autoclave__result-card autoclave__result-card--total">
+                            <div class="autoclave__result-icon">⏰</div>
+                            <div class="autoclave__result-label">Total Cycle</div>
+                            
+                            <div class="autoclave__result-sublabel">Including heat-up, cool-down</div>
+                        </div>
+                    </div>
+
+                    <!-- Results Description -->
+                    
+
+                    <!-- Cycle Breakdown -->
+                    
+
+                    <!-- Warnings/Notes -->
+                    
+
+                    <!-- Actions -->
+                    <div class="autoclave__results-actions">
+                        <button id="print-results" class="autoclave__action-button autoclave__action-button--print">
+                            <span>🖨️</span> Print Cycle Log
+                        </button>
+                        <button id="save-results" class="autoclave__action-button autoclave__action-button--save">
+                            <span>💾</span> Save to Records
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════════════
+                 SPORE TEST TRACKER
+            ═══════════════════════════════════════════════════════════ -->
+            <section class="autoclave__section autoclave__spore-section">
+                <div class="autoclave__section-header">
+                    <h2 class="autoclave__section-title">
+                        <span class="autoclave__section-icon">🔬</span>
+                        Spore Test Schedule Tracker
+                    </h2>
+                    <p class="autoclave__section-description">
+                        Track biological indicator tests and stay compliant with state requirements
+                    </p>
+                </div>
+
+                <form id="spore-form" class="autoclave__spore-form">
+                    <div class="autoclave__form-grid">
+                        <!-- Last Test Date -->
+                        <div class="autoclave__form-group">
+                            <label for="last-test-date" class="autoclave__label">
+                                <span class="autoclave__label-icon">📅</span>
+                                Last Spore Test Date
+                            </label>
+                            <input type="date"
+                                   id="last-test-date"
+                                   class="autoclave__input"
+                                   required>
+                        </div>
+
+                        <!-- State/Region -->
+                        <div class="autoclave__form-group">
+                            <label for="state-select" class="autoclave__label">
+                                <span class="autoclave__label-icon">📍</span>
+                                Country/State/Region
+                            </label>
+                            <select id="state-select" class="autoclave__select" required>
+                                <option value="">Select your country/state...</option>
+
+                                <optgroup label="🇺🇸 United States">
+                                    <option value="AL">Alabama</option>
+                                    <option value="AK">Alaska</option>
+                                    <option value="AZ">Arizona</option>
+                                    <option value="AR">Arkansas</option>
+                                    <option value="CA">California</option>
+                                    <option value="CO">Colorado</option>
+                                    <option value="CT">Connecticut</option>
+                                    <option value="DE">Delaware</option>
+                                    <option value="FL">Florida</option>
+                                    <option value="GA">Georgia</option>
+                                    <option value="HI">Hawaii</option>
+                                    <option value="ID">Idaho</option>
+                                    <option value="IL">Illinois</option>
+                                    <option value="IN">Indiana</option>
+                                    <option value="IA">Iowa</option>
+                                    <option value="KS">Kansas</option>
+                                    <option value="KY">Kentucky</option>
+                                    <option value="LA">Louisiana</option>
+                                    <option value="ME">Maine</option>
+                                    <option value="MD">Maryland</option>
+                                    <option value="MA">Massachusetts</option>
+                                    <option value="MI">Michigan</option>
+                                    <option value="MN">Minnesota</option>
+                                    <option value="MS">Mississippi</option>
+                                    <option value="MO">Missouri</option>
+                                    <option value="MT">Montana</option>
+                                    <option value="NE">Nebraska</option>
+                                    <option value="NV">Nevada</option>
+                                    <option value="NH">New Hampshire</option>
+                                    <option value="NJ">New Jersey</option>
+                                    <option value="NM">New Mexico</option>
+                                    <option value="NY">New York</option>
+                                    <option value="NC">North Carolina</option>
+                                    <option value="ND">North Dakota</option>
+                                    <option value="OH">Ohio</option>
+                                    <option value="OK">Oklahoma</option>
+                                    <option value="OR">Oregon</option>
+                                    <option value="PA">Pennsylvania</option>
+                                    <option value="RI">Rhode Island</option>
+                                    <option value="SC">South Carolina</option>
+                                    <option value="SD">South Dakota</option>
+                                    <option value="TN">Tennessee</option>
+                                    <option value="TX">Texas</option>
+                                    <option value="UT">Utah</option>
+                                    <option value="VT">Vermont</option>
+                                    <option value="VA">Virginia</option>
+                                    <option value="WA">Washington</option>
+                                    <option value="WV">West Virginia</option>
+                                    <option value="WI">Wisconsin</option>
+                                    <option value="WY">Wyoming</option>
+                                    <option value="DC">District of Columbia</option>
+                                </optgroup>
+
+                                <optgroup label="🇪🇺 Europe">
+                                    <option value="UK">United Kingdom</option>
+                                    <option value="FR">France</option>
+                                    <option value="DE">Germany</option>
+                                    <option value="IT">Italy</option>
+                                    <option value="ES">Spain</option>
+                                    <option value="NL">Netherlands</option>
+                                    <option value="BE">Belgium</option>
+                                    <option value="CH">Switzerland</option>
+                                    <option value="AT">Austria</option>
+                                    <option value="SE">Sweden</option>
+                                    <option value="NO">Norway</option>
+                                    <option value="DK">Denmark</option>
+                                    <option value="FI">Finland</option>
+                                    <option value="PL">Poland</option>
+                                    <option value="IE">Ireland</option>
+                                    <option value="PT">Portugal</option>
+                                    <option value="GR">Greece</option>
+                                    <option value="CZ">Czech Republic</option>
+                                </optgroup>
+
+                                <optgroup label="🇨🇦 Canada">
+                                    <option value="CA">Canada</option>
+                                </optgroup>
+
+                                <optgroup label="🌍 Other">
+                                    <option value="OTHER">Other Country</option>
+                                </optgroup>
+                            </select>
+                        </div>
+
+                        <!-- Test Frequency (auto-populated) -->
+                        <div class="autoclave__form-group">
+                            <label for="test-frequency" class="autoclave__label">
+                                <span class="autoclave__label-icon">🔁</span>
+                                Testing Frequency
+                            </label>
+                            <select id="test-frequency" class="autoclave__select">
+                                <option value="weekly">Weekly (Recommended)</option>
+                                <option value="monthly">Monthly (if allowed)</option>
+                            </select>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="autoclave__form-group">
+                            <button type="submit" class="autoclave__calculate-button autoclave__calculate-button--secondary">
+                                <span class="autoclave__button-icon">🔍</span>
+                                Check Test Schedule
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- Spore Test Results -->
+                <div id="spore-results" class="autoclave__spore-results" style="display: none;">
+                    <div class="autoclave__spore-results-header">
+                        <h3 class="autoclave__spore-results-title">Spore Test Schedule</h3>
+                        
+                    </div>
+
+                    <div class="autoclave__spore-info-grid">
+                        <div class="autoclave__spore-info-item">
+                            <div class="autoclave__spore-info-label">State/Region</div>
+                            
+                        </div>
+
+                        <div class="autoclave__spore-info-item">
+                            <div class="autoclave__spore-info-label">Frequency</div>
+                            
+                        </div>
+
+                        <div class="autoclave__spore-info-item">
+                            <div class="autoclave__spore-info-label">Last Test</div>
+                            
+                        </div>
+
+                        <div class="autoclave__spore-info-item">
+                            <div class="autoclave__spore-info-label">Next Test Due</div>
+                            
+                        </div>
+
+                        <div class="autoclave__spore-info-item">
+                            <div class="autoclave__spore-info-label">Days Until Due</div>
+                            
+                        </div>
+                    </div>
+
+                    
+
+                    <div class="autoclave__spore-actions">
+                        <button id="print-schedule" class="autoclave__action-button">
+                            <span>🖨️</span> Print Test Schedule
+                        </button>
+                        <button id="download-log" class="autoclave__action-button">
+                            <span>📥</span> Download Log Template
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════════════
+                 LOAD OPTIMIZATION CALCULATOR
+            ═══════════════════════════════════════════════════════════ -->
+            <section class="autoclave__section autoclave__optimization-section">
+                <button class="autoclave__collapsible-trigger"
+                        aria-controls="optimization-content"
+                        aria-expanded="false">
+                    <span>
+                        <span class="autoclave__section-icon">📦</span>
+                        Load Optimization Calculator
+                    </span>
+                    <span class="autoclave__collapsible-icon">▼</span>
+                </button>
+
+                <div id="optimization-content" class="autoclave__collapsible-content" style="display: none;">
+                    <p class="autoclave__section-description">
+                        Calculate optimal load arrangement and chamber capacity
+                    </p>
+
+                    <form id="optimization-form" class="autoclave__optimization-form">
+                        <div class="autoclave__form-grid">
+                            <div class="autoclave__form-group">
+                                <label for="chamber-width" class="autoclave__label">Chamber Width</label>
+                                <div class="autoclave__input-with-unit">
+                                    <input type="number" id="chamber-width" class="autoclave__input autoclave__input--with-unit" min="0" step="0.1" placeholder="e.g., 12" required>
+                                    <select id="chamber-width-unit" class="autoclave__unit-select">
+                                        <option value="inches">Inches</option>
+                                        <option value="mm">Millimeters</option>
+                                        <option value="cm">Centimeters</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="autoclave__form-group">
+                                <label for="chamber-depth" class="autoclave__label">Chamber Depth</label>
+                                <div class="autoclave__input-with-unit">
+                                    <input type="number" id="chamber-depth" class="autoclave__input autoclave__input--with-unit" min="0" step="0.1" placeholder="e.g., 18" required>
+                                    <select id="chamber-depth-unit" class="autoclave__unit-select">
+                                        <option value="inches">Inches</option>
+                                        <option value="mm">Millimeters</option>
+                                        <option value="cm">Centimeters</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="autoclave__form-group">
+                                <label for="chamber-height" class="autoclave__label">Chamber Height</label>
+                                <div class="autoclave__input-with-unit">
+                                    <input type="number" id="chamber-height" class="autoclave__input autoclave__input--with-unit" min="0" step="0.1" placeholder="e.g., 10" required>
+                                    <select id="chamber-height-unit" class="autoclave__unit-select">
+                                        <option value="inches">Inches</option>
+                                        <option value="mm">Millimeters</option>
+                                        <option value="cm">Centimeters</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="autoclave__form-group">
+                                <label for="num-instruments" class="autoclave__label">Number of Instruments</label>
+                                <input type="number" id="num-instruments" class="autoclave__input" min="1" max="100" placeholder="e.g., 20" required>
+                            </div>
+
+                            <div class="autoclave__form-group autoclave__form-group--full">
+                                <button type="submit" class="autoclave__calculate-button autoclave__calculate-button--secondary">
+                                    <span>📊</span> Calculate Load Optimization
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    
+                </div>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════════════
+                 STERILIZATION TROUBLESHOOTER
+            ═══════════════════════════════════════════════════════════ -->
+            <section class="autoclave__section autoclave__troubleshooter-section">
+                <button class="autoclave__collapsible-trigger"
+                        aria-controls="troubleshooter-content"
+                        aria-expanded="false">
+                    <span>
+                        <span class="autoclave__section-icon">🔧</span>
+                        Sterilization Troubleshooter
+                    </span>
+                    <span class="autoclave__collapsible-icon">▼</span>
+                </button>
+
+                <div id="troubleshooter-content" class="autoclave__collapsible-content" style="display: none;">
+                    <p class="autoclave__section-description">
+                        Diagnose common autoclave problems and find solutions
+                    </p>
+
+                    <div class="autoclave__problem-selector">
+                        <h3 class="autoclave__selector-title">What problem are you experiencing?</h3>
+                        <div class="autoclave__troubleshooter-grid">
+                            <button class="autoclave__troubleshooter-button" data-issue="wet-instruments">
+                                <span class="autoclave__troubleshooter-button-icon">💧</span>
+                                <span class="autoclave__troubleshooter-button-text">Instruments Still Wet</span>
+                            </button>
+                            <button class="autoclave__troubleshooter-button" data-issue="failed-spore">
+                                <span class="autoclave__troubleshooter-button-icon">❌</span>
+                                <span class="autoclave__troubleshooter-button-text">Failed Spore Test</span>
+                            </button>
+                            <button class="autoclave__troubleshooter-button" data-issue="slow-cycle">
+                                <span class="autoclave__troubleshooter-button-icon">🐌</span>
+                                <span class="autoclave__troubleshooter-button-text">Cycle Too Slow</span>
+                            </button>
+                            <button class="autoclave__troubleshooter-button" data-issue="temperature-issues">
+                                <span class="autoclave__troubleshooter-button-icon">🌡️</span>
+                                <span class="autoclave__troubleshooter-button-text">Won't Reach Temperature</span>
+                            </button>
+                            <button class="autoclave__troubleshooter-button" data-issue="pressure-problems">
+                                <span class="autoclave__troubleshooter-button-icon">⚙️</span>
+                                <span class="autoclave__troubleshooter-button-text">Pressure Problems</span>
+                            </button>
+                            <button class="autoclave__troubleshooter-button" data-issue="package-integrity">
+                                <span class="autoclave__troubleshooter-button-icon">📦</span>
+                                <span class="autoclave__troubleshooter-button-text">Package Integrity Issues</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════════════
+                 MATERIAL COMPATIBILITY CHECKER
+            ═══════════════════════════════════════════════════════════ -->
+            <section class="autoclave__section autoclave__compatibility-section">
+                <button class="autoclave__collapsible-trigger"
+                        aria-controls="compatibility-content"
+                        aria-expanded="false">
+                    <span>
+                        <span class="autoclave__section-icon">✅</span>
+                        Material Compatibility Checker
+                    </span>
+                    <span class="autoclave__collapsible-icon">▼</span>
+                </button>
+
+                <div id="compatibility-content" class="autoclave__collapsible-content" style="display: none;">
+                    <p class="autoclave__section-description">
+                        Check if your instruments are safe for autoclave sterilization
+                    </p>
+
+                    <form id="compatibility-form" class="autoclave__compatibility-form">
+                        <div class="autoclave__form-grid">
+                            <div class="autoclave__form-group">
+                                <label for="sterilization-method" class="autoclave__label">Sterilization Method</label>
+                                <select id="sterilization-method" class="autoclave__select" required>
+                                    <option value="">Select method...</option>
+                                    <option value="steam-gravity">Steam - Gravity Displacement</option>
+                                    <option value="steam-prevac">Steam - Pre-Vacuum</option>
+                                    <option value="chemical-vapor">Chemical Vapor</option>
+                                    <option value="dry-heat">Dry Heat</option>
+                                </select>
+                            </div>
+
+                            <div class="autoclave__form-group">
+                                <label for="material-type" class="autoclave__label">Instrument Material</label>
+                                <select id="material-type" class="autoclave__select" required>
+                                    <option value="">Select material...</option>
+                                    <option value="stainless">Stainless Steel</option>
+                                    <option value="titanium">Titanium</option>
+                                    <option value="carbon-steel">Carbon Steel</option>
+                                    <option value="aluminum">Aluminum</option>
+                                    <option value="glass">Glass</option>
+                                    <option value="plastic">Plastic (PTFE, BioFlex)</option>
+                                    <option value="ceramic">Ceramic</option>
+                                </select>
+                            </div>
+
+                            <div class="autoclave__form-group autoclave__form-group--full">
+                                <button type="submit" class="autoclave__calculate-button autoclave__calculate-button--secondary">
+                                    <span>🔍</span> Check Compatibility
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    
+                </div>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════════════
+                 REFERENCE GUIDE
+            ═══════════════════════════════════════════════════════════ -->
+            <section class="autoclave__section autoclave__reference-section">
+                <button class="autoclave__collapsible-trigger"
+                        aria-controls="reference-content"
+                        aria-expanded="false">
+                    <span>
+                        <span class="autoclave__section-icon">📚</span>
+                        Quick Reference Guide
+                    </span>
+                    <span class="autoclave__collapsible-icon">▼</span>
+                </button>
+
+                <div id="reference-content" class="autoclave__collapsible-content" style="display: none;">
+                    <div class="autoclave__reference-tabs">
+                        <button class="autoclave__tab-button active" data-tab="autoclave-types">Autoclave Types</button>
+                        <button class="autoclave__tab-button" data-tab="temperatures">Temperatures</button>
+                        <button class="autoclave__tab-button" data-tab="cycle-times">Cycle Times</button>
+                        <button class="autoclave__tab-button" data-tab="maintenance">Maintenance</button>
+                    </div>
+
+                    <div id="autoclave-types" class="autoclave__tab-content active">
+                        
+                    </div>
+
+                    <div id="temperatures" class="autoclave__tab-content">
+                        
+                    </div>
+
+                    <div id="cycle-times" class="autoclave__tab-content">
+                        
+                    </div>
+
+                    <div id="maintenance" class="autoclave__tab-content">
+                        
+                    </div>
+                </div>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════════════
+                 EDUCATIONAL CARDS
+            ═══════════════════════════════════════════════════════════ -->
+            <section class="autoclave__section autoclave__education-section">
+                <h2 class="autoclave__section-title">
+                    <span class="autoclave__section-icon">📖</span>
+                    Sterilization Education
+                </h2>
+
+                <div class="autoclave__education-grid">
+                    <article class="autoclave__education-card">
+                        <div class="autoclave__education-icon">🔬</div>
+                        <h3 class="autoclave__education-title">How Autoclaves Work</h3>
+                        <p class="autoclave__education-text">
+                            Autoclaves kill microorganisms using pressurized steam at high temperatures.
+                            The combination of heat, pressure, and time destroys all bacteria, viruses,
+                            fungi, and spores, including hard-to-kill organisms like <em>Geobacillus stearothermophilus</em>.
+                        </p>
+                    </article>
+
+                    <article class="autoclave__education-card">
+                        <div class="autoclave__education-icon">⚗️</div>
+                        <h3 class="autoclave__education-title">Why Spore Tests Matter</h3>
+                        <p class="autoclave__education-text">
+                            Biological indicators (spore tests) use highly resistant bacterial spores to verify
+                            your autoclave is actually killing microorganisms. Mechanical indicators
+                            (temperature/pressure gauges) can fail while appearing normal. Spore tests are the
+                            only way to confirm true sterilization.
+                        </p>
+                    </article>
+
+                    <article class="autoclave__education-card">
+                        <div class="autoclave__education-icon">⚠️</div>
+                        <h3 class="autoclave__education-title">Common Mistakes</h3>
+                        <p class="autoclave__education-text">
+                            Overloading the chamber, using incorrect wrapping, not allowing proper drying time,
+                            and skipping spore tests are common errors. These can result in incomplete
+                            sterilization, putting clients at risk of infection and studios at risk of
+                            legal liability.
+                        </p>
+                    </article>
+
+                    <article class="autoclave__education-card">
+                        <div class="autoclave__education-icon">📋</div>
+                        <h3 class="autoclave__education-title">Documentation Requirements</h3>
+                        <p class="autoclave__education-text">
+                            Most states require documented proof of sterilization compliance. This includes
+                            daily cycle logs, spore test results, maintenance records, and staff training
+                            documentation. Keep records for at least 3 years for health inspections and
+                            potential legal protection.
+                        </p>
+                    </article>
+
+                    <article class="autoclave__education-card">
+                        <div class="autoclave__education-icon">🚨</div>
+                        <h3 class="autoclave__education-title">When Spore Tests Fail</h3>
+                        <p class="autoclave__education-text">
+                            STOP using the autoclave immediately if a spore test fails. Recall all instruments
+                            processed since the last successful test. Do NOT use instruments until the problem
+                            is identified, fixed, and a new spore test passes. Contact clients if needed.
+                        </p>
+                    </article>
+
+                    <article class="autoclave__education-card">
+                        <div class="autoclave__education-icon">🔄</div>
+                        <h3 class="autoclave__education-title">Regular Maintenance</h3>
+                        <p class="autoclave__education-text">
+                            Weekly inspection of gaskets and chamber, monthly deep cleaning, annual professional
+                            calibration, and immediate repair of any issues are essential. Preventive maintenance
+                            prevents costly breakdowns and ensures consistent sterilization performance.
+                        </p>
+                    </article>
+                </div>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════════════
+                 SAFETY DISCLAIMERS
+            ═══════════════════════════════════════════════════════════ -->
+            <section class="autoclave__section autoclave__disclaimer-section">
+                <div class="autoclave__disclaimer-box autoclave__disclaimer-box--critical">
+                    <h3 class="autoclave__disclaimer-title">⚠️ Critical Safety Notice</h3>
+                    <div class="autoclave__disclaimer-content">
+                        <p><strong>This calculator provides general guidance based on CDC, FDA, and manufacturer recommendations.</strong> Always follow your autoclave manufacturer's specific instructions and your state/local health regulations. This tool does not replace professional training or regulatory compliance requirements.</p>
+
+                        <p><strong>Sterilization is a critical safety process.</strong> Improper sterilization can result in serious infections and legal liability. When in doubt, consult with a sterilization specialist, your autoclave manufacturer, or your local health department.</p>
+
+                        <p><strong>State and local regulations vary.</strong> While we strive to maintain accurate regulatory information, requirements can change. Always verify current requirements with your local health department.</p>
+
+                        <p><strong>Failed spore test = STOP using autoclave immediately</strong> until issue is resolved and subsequent test passes. Using instruments from a failed cycle can endanger clients.</p>
+                    </div>
+                </div>
+
+                <div class="autoclave__disclaimer-box">
+                    <h3 class="autoclave__disclaimer-title">📚 Standards Referenced</h3>
+                    <ul class="autoclave__disclaimer-list">
+                        <li>CDC Guidelines for Disinfection and Sterilization in Healthcare Facilities</li>
+                        <li>FDA Sterilization Standards for Medical Devices</li>
+                        <li>OSHA Bloodborne Pathogen Standards (29 CFR 1910.1030)</li>
+                        <li>State Health Department Regulations (varies by state)</li>
+                        <li>Autoclave Manufacturer Specifications</li>
+                    </ul>
+                </div>
+            </section>
+
+        </div>
+    
+
+<!-- Related Tools Section -->
+<section class="related-tools-section" style="padding: 2rem 1rem; background: #fff; border-top: 1px solid #eee;">
+    <div style="max-width: 800px; margin: 0 auto;">
+        <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: #1e293b;">Recommended for You</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+            <a href="https://poliinternational.com/form-builder/" style="display: block; padding: 1rem; background: #f1f5f9; border-radius: 8px; text-decoration: none; color: #0693e3; font-weight: 500; text-align: center; transition: background 0.2s;">Form Builder</a>
+            <a href="https://poliinternational.com/studio-crm/" style="display: block; padding: 1rem; background: #f1f5f9; border-radius: 8px; text-decoration: none; color: #0693e3; font-weight: 500; text-align: center; transition: background 0.2s;">Studio Crm</a>
+            <a href="https://poliinternational.com/Equipment-Compatibility-Checker/" style="display: block; padding: 1rem; background: #f1f5f9; border-radius: 8px; text-decoration: none; color: #0693e3; font-weight: 500; text-align: center; transition: background 0.2s;">Equipment Compatibility</a>
+        </div>
+        <div style="text-align: center; margin-top: 1.5rem;">
+            <a href="https://poliinternational.com/tools/" style="color: #64748b; text-decoration: underline; font-size: 0.9rem;">View All 17 Free Tools</a>
+        </div>
+    </div>
+</section>
+
+<!-- GEO Semantic Block -->
+<aside class="geo-summary-block" style="background: #f8fafc; border-left: 4px solid #0693e3; padding: 1.5rem; margin: 2rem 0; font-style: italic; color: #334155; border-radius: 0 8px 8px 0;">
+    <p style="margin: 0; line-height: 1.6;">Studio Efficiency Tip: Streamlining your administrative tasks allows you to focus more on your art. Our tools are designed with a studio-first mentality, ensuring high performance, data privacy, and professional-grade accuracy.</p>
+</aside>
+
+</main>
+
+        <!-- MORE TOOLS NAVIGATION -->
+    <section class="autoclave-calc__more-tools">
+        <div class="autoclave-calc__container" style="text-align: center; padding: 2rem 1rem;">
+            <p style="font-size: 1.05rem; margin: 0; color: #666;">
+                <a href="https://poliinternational.com/tools" target="_blank" rel="noopener" style="color: #0693e3; text-decoration: none; font-weight: 600; transition: color 0.2s;">
+                    Explore all our free professional tools →
+                </a>
+            </p>
+        </div>
+    </section>
+
+
+    <!-- Community Feedback Section -->
+    <section class="community-feedback">
+        <div class="container">
+            <div class="feedback-card">
+                <div class="feedback-header">
+                    <h2 class="feedback-title">💬 Help Us Build Better Tools, Friend!</h2>
+                    <p class="feedback-subtitle">
+                        Hey there, fellow body art enthusiast! Whether you're a professional tattooist, piercer, or someone who loves body art as much as we do – we're all in this together.
+                        Our passion doesn't get much support out there, so let's stick together and build the best tools to help our community thrive!
+                    </p>
+                    <p class="feedback-callout">
+                        <strong>Your feedback matters!</strong> Found something useful? Got ideas for improvements? We're all ears!
+                        Help us make this tool even better for everyone in our body art family.
+                    </p>
+                </div>
+
+                <form class="feedback-form" id="feedbackForm">
+                    <div class="feedback-form-grid">
+                        <div class="form-group">
+                            <label for="userEmail" class="form-label">Your Email (so we can reply!)</label>
+                            <input type="email" id="userEmail" name="userEmail" class="form-input"
+                                   placeholder="your.email@example.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="userRole" class="form-label">You are a...</label>
+                            <select id="userRole" name="userRole" class="form-select" required>
+                                <option value="">Choose one</option>
+                                <option value="tattoo_artist">Tattoo Artist</option>
+                                <option value="piercer">Professional Piercer</option>
+                                <option value="shop_owner">Shop Owner</option>
+                                <option value="apprentice">Apprentice</option>
+                                <option value="enthusiast">Body Art Enthusiast/Customer</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="feedbackText" class="form-label">Share Your Thoughts, Ideas, or Suggestions</label>
+                        <textarea id="feedbackText" name="feedbackText" class="form-textarea"
+                                  placeholder="What do you love? What could be better? Any features you'd like to see? We genuinely want to hear from you!"
+                                  rows="5" required></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="feedback-submit-btn">
+                            <span class="btn-icon">✉️</span>
+                            <span class="btn-text">Send Feedback</span>
+                        </button>
+                    </div>
+
+                    <!-- Success/Error Messages -->
+                    <div class="feedback-message feedback-message--success" id="feedbackSuccess" style="display: none;">
+                        <strong>🎉 Thank you, friend!</strong> Your feedback has been sent. We'll read it carefully and get back to you soon!
+                    </div>
+                    <div class="feedback-message feedback-message--error" id="feedbackError" style="display: none;">
+                        <strong>😔 Oops!</strong> Something went wrong. Please try again or email us directly at patrick@poli-international.com
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         EMBED MODAL
+    ═══════════════════════════════════════════════════════════ -->
+    <div id="embed-modal" class="autoclave__modal" style="display: none;">
+        
+        <div class="autoclave__modal-content">
+            <button class="autoclave__modal-close" aria-label="Close modal">&times;</button>
+
+            <h2 class="autoclave__modal-title">🎁 Use This Tool FREE on Your Website!</h2>
+
+            <!-- Embed Code Section -->
+            <div class="autoclave__embed-section">
+                <h3 class="autoclave__embed-subtitle">📋 Embed Code</h3>
+                <p class="autoclave__embed-description">Copy and paste this code into your website:</p>
+
+                <div class="autoclave__embed-code-container">
+                    <code id="embed-code" class="autoclave__embed-code">&lt;iframe src="https://poliinternational.com/tools/autoclave-calculator/embed.html" width="100%" height="800" frameborder="0" title="Autoclave Sterilization Calculator"&gt;&lt;/iframe&gt;</code>
+                </div>
+
+                <button id="copy-embed-code" class="autoclave__copy-button">
+                    <span class="autoclave__copy-icon">📋</span>
+                    <span class="autoclave__copy-text">Copy Code</span>
+                </button>
+                <p id="copy-success" class="autoclave__copy-success" style="display: none;">✅ Copied to clipboard!</p>
+            </div>
+
+            <!-- Download/Traffic Buttons -->
+            <div class="autoclave__modal-actions">
+                <a href="index.html" download class="autoclave__modal-button autoclave__modal-button--download">
+                    <span>⬇️</span> Download HTML File
+                </a>
+                <a href="https://poliinternational.com/tools" target="_blank" class="autoclave__modal-button autoclave__modal-button--traffic">
+                    <span>🔗</span> More Free Tools
+                </a>
+            </div>
+
+            <!-- Email Capture in Modal -->
+            <div class="autoclave__modal-email-section">
+                <h3 class="autoclave__modal-email-title">🔔 Get Notified of New Tools!</h3>
+                <form id="modal-email-form" class="autoclave__modal-email-form" data-location="modal">
+                    <input type="email"
+                           id="modal-email-input"
+                           class="autoclave__modal-email-input"
+                           placeholder="Your email address"
+                           required>
+                    <button type="submit" class="autoclave__modal-email-submit">Subscribe</button>
+                </form>
+                <p id="modal-email-success" class="autoclave__email-success" style="display: none;">
+                    ✅ Thanks! We'll notify you when new tools launch!
+                </p>
+                <p id="modal-email-error" class="autoclave__email-error" style="display: none;">
+                    ❌ Please enter a valid email address.
+                </p>
+            </div>
+
+            <!-- Ko-fi in Modal -->
+            <div class="autoclave__modal-kofi-section">
+                <p class="autoclave__modal-kofi-text">☕ Enjoying this free tool? Support more development!</p>
+                <a href='https://ko-fi.com/C0C81NEXBV' target='_blank' class="autoclave__modal-kofi-link">
+                    <img src='https://storage.ko-fi.com/cdn/kofi6.png?v=6'
+                         border='0'
+                         alt='Buy Me a Coffee at ko-fi.com'
+                         class="autoclave__modal-kofi-image" />
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         JAVASCRIPT
+    ═══════════════════════════════════════════════════════════ -->
+    <script src="js/autoclave-data.js"></script>
+    <script src="js/state-requirements.js"></script>
+    <script src="js/calculator.js"></script>
+    <script src="js/pdf-generator.js"></script>
+    <script src="js/feedback.js"></script>
+
+    <!-- Hide header when embedded in iframe -->
+    <script>
+        // Detect if page is loaded in iframe and hide header
+        if (window.self !== window.top) {
+            document.addEventListener('DOMContentLoaded', function() {
+                var header = document.querySelector('.site-header');
+                if (header) {
+                    header.style.display = 'none';
+                }
+                // Also hide tool title section if present
+                var toolTitle = document.querySelector('.tool-title-section');
+                if (toolTitle) {
+                    toolTitle.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+<!-- AUTOMATIC IFRAME CONTENT HIDER (ADDED BY ANTIGRAVITY) -->
+<script>
+    if (window.self !== window.top) {
+        document.addEventListener('DOMContentLoaded', function() {
+            const selectors = ['.breadcrumb-nav', '.site-header', '.site-footer', '.equip-checker__header', 
+                '.equip-checker__footer', '.tool-title-section', '.more-tools-section',
+                '.feedback-section', '.related-tools-section', '.geo-summary-block',
+                '.needle-selector__header', '.needle-selector__footer', 
+                '.needle-selector__more-tools', '.community-feedback',
+                '.poli-footer', '.share-card', '.need-support-card', '.explore-all-card'];
+            selectors.forEach(selector => {
+                const elements = document.querySelectorAll(selector);
+                elements.forEach(el => el.style.display = 'none');
+            });
+            // Force reset body margins for embed
+            document.body.style.paddingTop = '0';
+            document.body.style.marginTop = '0';
+            document.body.style.paddingBottom = '0';
+            document.body.style.marginBottom = '0';
+            
+            
+/* Center align tool headers when in iframe */
+if (window.self !== window.top) {
+    const style = document.createElement('style');
+    style.textContent = `
+        /* Center the entire header section */
+        [class*="__header-content"],
+        [class*="__title-group"],
+        [class*="__header-buttons"] {
+            text-align: center !important;
+            justify-content: center !important;
+            align-items: center !important;
+        }
+
+        /* Center H2 headings */
+        [class*="__header"] h2,
+        [class*="__title-group"] h2,
+        header h2 {
+            text-align: center !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+
+        /* Center subtitles/descriptions */
+        [class*="__subtitle"],
+        [class*="__header"] p {
+            text-align: center !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+
+        /* Center button containers */
+        [class*="__header-buttons"] {
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            flex-wrap: wrap !important;
+        }
+    `;
+    document.head.appendChild(style);
+}
+        });
+    }
+</script>
+
+</body>
+</html>

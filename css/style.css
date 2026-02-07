@@ -1,0 +1,2909 @@
+/* ===================================
+   Site Header (Homepage Style)
+   =================================== */
+.site-header {
+    background: #1a1a1a;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Prevent site-header from changing in dark mode */
+[data-theme="dark"] .site-header {
+    background: #1a1a1a !important;
+}
+
+
+.site-header__container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.site-header__logo-link {
+    display: flex;
+    align-items: center;
+}
+
+.site-header__logo {
+    height: 60px;
+    width: auto;
+}
+
+.site-nav {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.site-nav__link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s;
+    white-space: nowrap;
+}
+
+.site-nav__link:hover {
+    color: #0693e3;
+    transform: translateY(-2px);
+}
+
+.site-header__actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+/* Tool Title Section */
+.tool-title-section {
+    background: var(--bg-primary, #fff);
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    border-bottom: 2px solid var(--border-primary, #ddd);
+}
+
+.tool-title {
+    font-family: var(--font-display, 'Playfair Display', serif);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary, #1a1a1a);
+    margin: 0 0 0.75rem 0;
+    line-height: 1.2;
+}
+
+.tool-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary, #666);
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Responsive Site Header */
+@media (max-width: 768px) {
+    .site-header__container {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .site-nav {
+        width: 100%;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .site-header__actions {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .tool-title {
+        font-size: 1.5rem;
+    }
+
+    .tool-subtitle {
+        font-size: 0.95rem;
+    }
+}
+
+
+
+/* ============================================
+   AUTOCLAVE STERILIZATION CALCULATOR
+   Medical/Clinical Aesthetic Styling
+   Poli International Widget Suite - Tool 4
+   ============================================ */
+
+/* ============================================
+   CSS CUSTOM PROPERTIES (DESIGN TOKENS)
+   Medical/Clinical Color System
+   ============================================ */
+
+:root {
+    /* PRIMARY COLORS - Medical/Clinical Palette */
+    --color-medical-green: #00A86B;          /* Primary Brand - Medical Green */
+    --color-medical-green-dark: #008757;     /* Hover states */
+    --color-medical-green-light: #00C87F;    /* Accent elements */
+    --color-clinical-white: #FFFFFF;          /* Clean background */
+    --color-clinical-gray: #F8F9FA;          /* Light sections */
+    --color-safety-blue: #0066CC;            /* Information elements */
+
+    /* SAFETY INDICATOR SYSTEM (Traffic Light) */
+    --color-safety-green: #28A745;           /* Safe/Verified/Pass */
+    --color-safety-yellow: #FFC107;          /* Caution/Warning */
+    --color-safety-orange: #FF8C00;          /* Alert/Attention */
+    --color-safety-red: #DC3545;             /* Danger/Failed/Critical */
+
+    /* NEUTRAL COLORS - Clinical Grays */
+    --color-text-primary: #212529;           /* Main text */
+    --color-text-secondary: #6C757D;         /* Secondary text */
+    --color-text-muted: #ADB5BD;             /* Help text */
+    --color-border: #DEE2E6;                 /* Borders */
+    --color-divider: #E9ECEF;                /* Section dividers */
+    --color-background: #FFFFFF;             /* Main background */
+    --color-background-alt: #F8F9FA;         /* Alternate sections */
+
+    /* GRADIENT OVERLAYS - Medical Professional */
+    --gradient-primary: linear-gradient(135deg, var(--color-medical-green) 0%, var(--color-medical-green-dark) 100%);
+    --gradient-safety: linear-gradient(135deg, var(--color-safety-green) 0%, var(--color-medical-green) 100%);
+    --gradient-header: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+
+    /* SHADOWS - Subtle Clinical Depth */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.10);
+    --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.12);
+
+    /* TYPOGRAPHY - Professional Medical */
+    --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --font-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+
+    --font-size-xs: 0.75rem;    /* 12px */
+    --font-size-sm: 0.875rem;   /* 14px */
+    --font-size-base: 1rem;     /* 16px */
+    --font-size-lg: 1.125rem;   /* 18px */
+    --font-size-xl: 1.25rem;    /* 20px */
+    --font-size-2xl: 1.5rem;    /* 24px */
+    --font-size-3xl: 1.875rem;  /* 30px */
+    --font-size-4xl: 2.25rem;   /* 36px */
+
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    /* SPACING - Clinical Precision */
+    --spacing-xs: 0.25rem;   /* 4px */
+    --spacing-sm: 0.5rem;    /* 8px */
+    --spacing-md: 1rem;      /* 16px */
+    --spacing-lg: 1.5rem;    /* 24px */
+    --spacing-xl: 2rem;      /* 32px */
+    --spacing-2xl: 3rem;     /* 48px */
+    --spacing-3xl: 4rem;     /* 64px */
+
+    /* BORDER RADIUS - Clean Clinical Edges */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --radius-full: 9999px;
+
+    /* TRANSITIONS - Smooth Professional Interactions */
+    --transition-fast: 150ms ease-in-out;
+    --transition-base: 250ms ease-in-out;
+    --transition-slow: 350ms ease-in-out;
+
+    /* Z-INDEX LAYERS */
+    --z-dropdown: 1000;
+    --z-sticky: 1020;
+    --z-fixed: 1030;
+    --z-modal-backdrop: 1040;
+    --z-modal: 1050;
+    --z-tooltip: 1060;
+}
+
+/* ============================================
+   DARK MODE COLORS
+   Clinical Dark Theme
+   ============================================ */
+
+[data-theme="dark"] {
+    --color-medical-green: #00C87F;          /* Brighter for dark mode */
+    --color-medical-green-dark: #00A86B;
+    --color-medical-green-light: #00E693;
+    --color-clinical-white: #1A1D20;         /* Dark background */
+    --color-clinical-gray: #2D3135;          /* Dark sections */
+
+    --color-text-primary: #FFFFFF;           /* Pure white for better visibility */
+    --color-text-secondary: #ADB5BD;
+    --color-text-muted: #6C757D;
+    --color-border: #495057;
+    --color-divider: #343A40;
+    --color-background: #1A1D20;
+    --color-background-alt: #2D3135;
+
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.5);
+    --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.6);
+}
+
+/* Dark mode specific enhancements */
+[data-theme="dark"] .autoclave__collapsible-trigger {
+    background: linear-gradient(135deg, rgba(0, 200, 127, 0.35) 0%, rgba(0, 200, 127, 0.20) 100%) !important;
+    border-color: #00C87F !important;
+    color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .autoclave__collapsible-trigger:hover {
+    background: linear-gradient(135deg, #00C87F 0%, #00A86B 100%) !important;
+    color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .autoclave__collapsible-trigger[aria-expanded="true"] {
+    background: linear-gradient(135deg, #00C87F 0%, #00A86B 100%) !important;
+    color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .autoclave__input,
+[data-theme="dark"] .autoclave__select {
+    background: #2D3135;
+    border-color: #495057;
+    color: #FFFFFF;
+}
+
+[data-theme="dark"] .autoclave__input:focus,
+[data-theme="dark"] .autoclave__select:focus {
+    border-color: #00C87F;
+    background: #343A40;
+}
+
+[data-theme="dark"] .autoclave__section {
+    background: #1A1D20;
+    border-color: #495057;
+}
+
+[data-theme="dark"] .autoclave__collapsible-content {
+    background: #2D3135 !important;
+    border-color: #00C87F !important;
+}
+
+[data-theme="dark"] .autoclave__section-title,
+[data-theme="dark"] .autoclave__label,
+[data-theme="dark"] .autoclave__collapsible-trigger {
+    color: #FFFFFF !important;
+}
+
+/* Force dark backgrounds and white text on collapsible sections */
+[data-theme="dark"] .autoclave__collapsible-trigger span {
+    color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .autoclave__section-icon {
+    color: #00C87F !important;
+}
+
+/* Ensure collapsible sections have dark backgrounds */
+[data-theme="dark"] .autoclave__optimization-section,
+[data-theme="dark"] .autoclave__troubleshooter-section,
+[data-theme="dark"] .autoclave__compatibility-section,
+[data-theme="dark"] .autoclave__reference-section {
+    background: #1A1D20 !important;
+}
+
+/* Force all text elements inside collapsible sections to be white in dark mode */
+[data-theme="dark"] .autoclave__collapsible-trigger *,
+[data-theme="dark"] .autoclave__collapsible-content * {
+    color: inherit;
+}
+
+/* ============================================
+   GLOBAL RESET & BASE STYLES
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-normal);
+    line-height: 1.6;
+    color: var(--color-text-primary);
+    background-color: var(--color-background);
+    transition: background-color var(--transition-base), color var(--transition-base);
+}
+
+/* ============================================
+   HEADER SECTION
+   Clinical Professional Header
+   ============================================ */
+
+.autoclave__header {
+    background: var(--gradient-header);
+    border-bottom: 3px solid var(--color-medical-green);
+    padding: var(--spacing-lg) var(--spacing-md);
+    box-shadow: var(--shadow-md);
+    position: sticky;
+    top: 0;
+    z-index: var(--z-sticky);
+    transition: all var(--transition-base);
+}
+
+.autoclave__header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+/* Logo Styling */
+.autoclave__logo-container {
+    flex-shrink: 0;
+}
+
+.autoclave__logo {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    transition: transform var(--transition-base);
+}
+
+.autoclave__logo:hover {
+    transform: scale(1.05);
+}
+
+/* Title Styling */
+.autoclave__title-container {
+    flex: 1;
+    min-width: 250px;
+}
+
+.autoclave__main-title {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-medical-green);
+    margin-bottom: var(--spacing-xs);
+    line-height: 1.2;
+}
+
+.autoclave__subtitle {
+    font-size: var(--font-size-base);
+    color: var(--color-text-secondary);
+    font-weight: var(--font-weight-medium);
+}
+
+/* Header Controls */
+.autoclave__header-controls {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    flex-shrink: 0;
+}
+
+/* Embed Button - Medical Green */
+.autoclave__embed-button {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    box-shadow: var(--shadow-sm);
+}
+
+.autoclave__embed-button:hover {
+    background: var(--color-medical-green-light);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.autoclave__embed-button:active {
+    transform: translateY(0);
+}
+
+.autoclave__embed-icon {
+    font-size: var(--font-size-lg);
+}
+
+/* Ko-fi Button */
+.autoclave__kofi-button {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    background: #FF5E5B;
+    color: white;
+    border: none;
+    border-radius: var(--radius-full);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    box-shadow: var(--shadow-sm);
+    text-decoration: none;
+}
+
+.autoclave__kofi-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    background: #FF4E4B;
+}
+
+.kofi-icon {
+    font-size: var(--font-size-lg);
+    line-height: 1;
+}
+
+.kofi-text {
+    white-space: nowrap;
+}
+
+/* Dark Mode Toggle */
+.autoclave__dark-mode-toggle {
+    width: 48px;
+    height: 48px;
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-full);
+    background: var(--color-background);
+    color: var(--color-text-primary);
+    font-size: var(--font-size-xl);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.autoclave__dark-mode-toggle:hover {
+    background: var(--color-medical-green);
+    color: white;
+    border-color: var(--color-medical-green);
+    transform: rotate(15deg);
+}
+
+/* ============================================
+   MAIN CONTENT CONTAINER
+   ============================================ */
+
+.autoclave__main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: var(--spacing-2xl) var(--spacing-md);
+}
+
+/* ============================================
+   SECTION STYLING
+   Clinical Professional Layout
+   ============================================ */
+
+.autoclave__section {
+    background: var(--color-background);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-base);
+}
+
+.autoclave__section:hover {
+    box-shadow: var(--shadow-lg);
+}
+
+/* Section Header */
+.autoclave__section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 2px solid var(--color-medical-green);
+}
+
+.autoclave__section-title-container {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.autoclave__section-icon {
+    font-size: var(--font-size-3xl);
+    color: var(--color-medical-green);
+}
+
+.autoclave__section-title {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+}
+
+.autoclave__section-description {
+    font-size: var(--font-size-base);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.6;
+}
+
+/* ============================================
+   CALCULATOR FORM
+   Medical Input Fields
+   ============================================ */
+
+.autoclave__calculator-form {
+    width: 100%;
+}
+
+.autoclave__form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.autoclave__form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.autoclave__form-group--full {
+    grid-column: 1 / -1;
+}
+
+/* Form Labels */
+.autoclave__label {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+}
+
+.autoclave__label-icon {
+    font-size: var(--font-size-lg);
+    color: var(--color-medical-green);
+}
+
+/* Form Inputs */
+.autoclave__input,
+.autoclave__select {
+    width: 100%;
+    padding: var(--spacing-md);
+    font-size: var(--font-size-base);
+    font-family: var(--font-primary);
+    color: var(--color-text-primary);
+    background: var(--color-background);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+}
+
+.autoclave__input:focus,
+.autoclave__select:focus {
+    outline: none;
+    border-color: var(--color-medical-green);
+    box-shadow: 0 0 0 4px rgba(0, 168, 107, 0.1);
+}
+
+.autoclave__input:hover,
+.autoclave__select:hover {
+    border-color: var(--color-medical-green);
+}
+
+/* Input with Unit Selector */
+.autoclave__input-with-unit {
+    display: flex;
+    gap: var(--spacing-sm);
+    align-items: center;
+    width: 100%;
+}
+
+.autoclave__input--with-unit {
+    flex: 1;
+    min-width: 0;
+}
+
+.autoclave__unit-select {
+    flex-shrink: 0;
+    width: auto;
+    min-width: 110px;
+    padding: var(--spacing-md);
+    background: var(--color-background);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-md);
+    color: var(--color-text-primary);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-medium);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.autoclave__unit-select:focus {
+    outline: none;
+    border-color: var(--color-medical-green);
+    box-shadow: 0 0 0 4px rgba(0, 168, 107, 0.1);
+}
+
+.autoclave__unit-select:hover {
+    border-color: var(--color-medical-green);
+}
+
+/* Dark mode for unit selector */
+[data-theme="dark"] .autoclave__unit-select {
+    background: #2D3135;
+    border-color: #495057;
+    color: #FFFFFF;
+}
+
+[data-theme="dark"] .autoclave__unit-select:focus {
+    border-color: #00C87F;
+    background: #343A40;
+}
+
+[data-theme="dark"] .autoclave__unit-select:hover {
+    border-color: #00C87F;
+}
+
+/* Help Text */
+.autoclave__help-text {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    font-style: italic;
+}
+
+/* Calculate Button - Large Medical Green */
+.autoclave__calculate-button {
+    width: 100%;
+    padding: var(--spacing-lg) var(--spacing-xl);
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius-lg);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+}
+
+.autoclave__calculate-button:hover {
+    background: var(--color-medical-green-light);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-3px);
+}
+
+.autoclave__calculate-button:active {
+    transform: translateY(0);
+}
+
+.autoclave__button-icon {
+    font-size: var(--font-size-2xl);
+}
+
+/* ============================================
+   RESULTS DISPLAY
+   Large Prominent Medical Results
+   ============================================ */
+
+.autoclave__results {
+    margin-top: var(--spacing-xl);
+    padding: var(--spacing-xl);
+    background: var(--gradient-header);
+    border: 3px solid var(--color-medical-green);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+}
+
+.autoclave__results-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-xl);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 2px solid var(--color-medical-green);
+}
+
+.autoclave__results-title {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-medical-green);
+}
+
+/* Safety Badge - Traffic Light System */
+.autoclave__safety-badge {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.autoclave__safety-badge--safe {
+    background-color: var(--color-safety-green);
+    color: white;
+}
+
+.autoclave__safety-badge--caution {
+    background-color: var(--color-safety-yellow);
+    color: #000;
+}
+
+.autoclave__safety-badge--warning {
+    background-color: var(--color-safety-orange);
+    color: white;
+}
+
+.autoclave__safety-badge--danger {
+    background-color: var(--color-safety-red);
+    color: white;
+}
+
+/* Results Grid - Large Prominent Cards */
+.autoclave__results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.autoclave__result-card {
+    background: var(--color-background);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    text-align: center;
+    transition: all var(--transition-base);
+    box-shadow: var(--shadow-sm);
+}
+
+.autoclave__result-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
+}
+
+/* Result Card Color Coding */
+.autoclave__result-card--temperature {
+    border-left: 5px solid #FF6B6B;
+}
+
+.autoclave__result-card--pressure {
+    border-left: 5px solid #4ECDC4;
+}
+
+.autoclave__result-card--time {
+    border-left: 5px solid #45B7D1;
+}
+
+.autoclave__result-card--cycle {
+    border-left: 5px solid var(--color-medical-green);
+}
+
+.autoclave__result-icon {
+    font-size: var(--font-size-4xl);
+    margin-bottom: var(--spacing-md);
+}
+
+.autoclave__result-label {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: var(--spacing-sm);
+}
+
+.autoclave__result-value {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-medical-green);
+    margin-bottom: var(--spacing-xs);
+}
+
+.autoclave__result-sublabel {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    font-style: italic;
+}
+
+/* Results Description */
+.autoclave__results-description {
+    margin-top: var(--spacing-xl);
+    padding: var(--spacing-lg);
+    background: white;
+    border-left: 4px solid var(--color-medical-green);
+    border-radius: var(--radius-md);
+}
+
+.autoclave__results-description p {
+    margin-bottom: var(--spacing-md);
+    line-height: 1.6;
+    color: var(--color-text-primary);
+}
+
+.autoclave__results-description p:last-child {
+    margin-bottom: 0;
+}
+
+.autoclave__results-description ul {
+    margin: var(--spacing-md) 0;
+    padding-left: var(--spacing-xl);
+}
+
+.autoclave__results-description li {
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.6;
+    color: var(--color-text-primary);
+}
+
+/* Dark mode for results */
+[data-theme="dark"] .autoclave__results {
+    background: linear-gradient(180deg, #1A1D20 0%, #2D3135 100%) !important;
+    border-color: #00C87F !important;
+}
+
+[data-theme="dark"] .autoclave__results-header {
+    border-bottom-color: #495057 !important;
+}
+
+[data-theme="dark"] .autoclave__results-title {
+    color: #00C87F !important;
+}
+
+[data-theme="dark"] .autoclave__result-card {
+    background: #2D3135 !important;
+    border-color: #495057 !important;
+}
+
+[data-theme="dark"] .autoclave__result-label {
+    color: #ADB5BD !important;
+}
+
+[data-theme="dark"] .autoclave__result-value {
+    color: #00C87F !important;
+}
+
+[data-theme="dark"] .autoclave__result-sublabel {
+    color: #6C757D !important;
+}
+
+[data-theme="dark"] .autoclave__results-description {
+    background: #2D3135 !important;
+    border-left-color: #00C87F !important;
+}
+
+[data-theme="dark"] .autoclave__results-description p {
+    color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .autoclave__results-description li {
+    color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .autoclave__results-description strong {
+    color: #00C87F !important;
+}
+
+[data-theme="dark"] .autoclave__action-button {
+    background: linear-gradient(135deg, #00C87F 0%, #00A86B 100%) !important;
+    color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .autoclave__action-button:hover {
+    background: linear-gradient(135deg, #00E891 0%, #00C87F 100%) !important;
+}
+
+/* ============================================
+   LOAD OPTIMIZATION RESULTS
+   ============================================ */
+
+.autoclave__optimization-results {
+    margin-top: var(--spacing-xl);
+    padding: var(--spacing-xl);
+    background: var(--color-background-alt);
+    border-radius: var(--radius-lg);
+    border: 2px solid var(--color-medical-green);
+}
+
+.autoclave__optimization-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-lg);
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+}
+
+.autoclave__optimization-title {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-medical-green);
+}
+
+.autoclave__optimization-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.autoclave__optimization-card {
+    background: white;
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-md);
+    border: 2px solid var(--color-border);
+    text-align: center;
+    transition: all var(--transition-fast);
+}
+
+.autoclave__optimization-card:hover {
+    border-color: var(--color-medical-green);
+    box-shadow: var(--shadow-md);
+}
+
+.autoclave__optimization-label {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    font-weight: var(--font-weight-medium);
+    margin-bottom: var(--spacing-sm);
+}
+
+.autoclave__optimization-value {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-medical-green);
+    margin-bottom: var(--spacing-xs);
+}
+
+.autoclave__optimization-sublabel {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+}
+
+.autoclave__optimization-message {
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.autoclave__optimization-message.autoclave__status--optimal {
+    background: rgba(40, 167, 69, 0.1);
+    border: 2px solid var(--color-safety-green);
+    color: var(--color-safety-green);
+}
+
+.autoclave__optimization-message.autoclave__status--warning {
+    background: rgba(255, 193, 7, 0.1);
+    border: 2px solid var(--color-safety-yellow);
+    color: #856404;
+}
+
+.autoclave__optimization-message.autoclave__status--danger {
+    background: rgba(220, 53, 69, 0.1);
+    border: 2px solid var(--color-safety-red);
+    color: var(--color-safety-red);
+}
+
+.autoclave__optimization-tips,
+.autoclave__optimization-dimensions {
+    background: white;
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+    margin-bottom: var(--spacing-lg);
+}
+
+.autoclave__tips-title {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-medical-green);
+    margin-bottom: var(--spacing-md);
+}
+
+.autoclave__tips-list {
+    list-style-type: disc;
+    padding-left: var(--spacing-xl);
+    line-height: 1.8;
+}
+
+.autoclave__tips-list li {
+    margin-bottom: var(--spacing-sm);
+}
+
+.autoclave__status-badge {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    display: inline-block;
+}
+
+.autoclave__status--optimal {
+    background: var(--color-safety-green);
+    color: white;
+}
+
+.autoclave__status--warning {
+    background: var(--color-safety-yellow);
+    color: #856404;
+}
+
+.autoclave__status--danger {
+    background: var(--color-safety-red);
+    color: white;
+}
+
+/* Dark mode for optimization results */
+[data-theme="dark"] .autoclave__optimization-results {
+    background: #1A1D20;
+    border-color: #00C87F;
+}
+
+[data-theme="dark"] .autoclave__optimization-card {
+    background: #2D3135;
+    border-color: #495057;
+}
+
+[data-theme="dark"] .autoclave__optimization-tips,
+[data-theme="dark"] .autoclave__optimization-dimensions {
+    background: #2D3135;
+    border-color: #495057;
+}
+
+[data-theme="dark"] .autoclave__optimization-message.autoclave__status--warning {
+    background: rgba(255, 193, 7, 0.2);
+    color: #FFC107;
+}
+
+/* ============================================
+   SPORE TEST TRACKER
+   Medical Schedule Tracking
+   ============================================ */
+
+.autoclave__spore-form {
+    width: 100%;
+}
+
+.autoclave__spore-results {
+    margin-top: var(--spacing-xl);
+    padding: var(--spacing-xl);
+    background: var(--color-background-alt);
+    border-radius: var(--radius-lg);
+    border: 2px solid var(--color-medical-green);
+}
+
+.autoclave__spore-results-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-lg);
+}
+
+.autoclave__spore-results-title {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-medical-green);
+}
+
+.autoclave__spore-status-badge {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+}
+
+.autoclave__spore-status-badge--current {
+    background-color: var(--color-safety-green);
+    color: white;
+}
+
+.autoclave__spore-status-badge--due-soon {
+    background-color: var(--color-safety-yellow);
+    color: #000;
+}
+
+.autoclave__spore-status-badge--overdue {
+    background-color: var(--color-safety-red);
+    color: white;
+}
+
+/* Spore Info Grid */
+.autoclave__spore-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.autoclave__spore-info-item {
+    padding: var(--spacing-md);
+    background: var(--color-background);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+}
+
+.autoclave__spore-info-label {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--spacing-xs);
+}
+
+.autoclave__spore-info-value {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-medical-green);
+}
+
+/* Spore Instructions */
+.autoclave__spore-instructions {
+    margin-top: var(--spacing-lg);
+    padding: var(--spacing-lg);
+    background: var(--color-background);
+    border-left: 4px solid var(--color-medical-green);
+    border-radius: var(--radius-md);
+}
+
+.autoclave__spore-instructions p {
+    margin-bottom: var(--spacing-md);
+    line-height: 1.6;
+}
+
+.autoclave__spore-instructions ul {
+    margin: var(--spacing-md) 0;
+    padding-left: var(--spacing-xl);
+}
+
+.autoclave__spore-instructions li {
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Spore Actions */
+.autoclave__spore-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+.autoclave__action-button {
+    flex: 1;
+    min-width: 200px;
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+}
+
+.autoclave__action-button:hover {
+    background: var(--color-medical-green-light);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.autoclave__action-button span {
+    font-size: var(--font-size-lg);
+}
+
+.autoclave__results-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-xl);
+    flex-wrap: wrap;
+}
+
+/* Date Input Visibility Enhancement */
+.autoclave__input[type="date"] {
+    position: relative;
+    padding-right: 40px;
+    cursor: pointer;
+    background: var(--color-background);
+    color: var(--color-text-primary);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-medium);
+}
+
+.autoclave__input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    font-size: 1.2em;
+    opacity: 1;
+    padding: 4px;
+    border-radius: 4px;
+}
+
+.autoclave__input[type="date"]::-webkit-calendar-picker-indicator:hover {
+    background: rgba(0, 168, 107, 0.1);
+}
+
+[data-theme="dark"] .autoclave__input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+/* ============================================
+   COLLAPSIBLE SECTIONS
+   Expandable Clinical Features
+   ============================================ */
+
+.autoclave__collapsible-trigger {
+    width: 100%;
+    padding: var(--spacing-lg) var(--spacing-xl);
+    background: linear-gradient(135deg, rgba(0, 168, 107, 0.25) 0%, rgba(0, 168, 107, 0.15) 100%);
+    border: 3px solid var(--color-medical-green);
+    border-radius: var(--radius-lg);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: var(--shadow-md);
+    gap: var(--spacing-md);
+}
+
+.autoclave__collapsible-trigger:hover {
+    background: var(--color-medical-green);
+    color: white;
+    border-color: var(--color-medical-green);
+}
+
+.autoclave__collapsible-trigger[aria-expanded="true"] {
+    background: var(--color-medical-green);
+    color: white;
+    border-color: var(--color-medical-green);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.autoclave__collapsible-icon {
+    font-size: var(--font-size-xl);
+    transition: transform var(--transition-base);
+}
+
+.autoclave__collapsible-trigger[aria-expanded="true"] .autoclave__collapsible-icon {
+    transform: rotate(180deg);
+}
+
+.autoclave__collapsible-content {
+    border: 2px solid var(--color-medical-green);
+    border-top: none;
+    border-bottom-left-radius: var(--radius-md);
+    border-bottom-right-radius: var(--radius-md);
+    padding: var(--spacing-xl);
+    background: var(--color-background);
+}
+
+/* ============================================
+   TROUBLESHOOTER BUTTONS
+   Medical Diagnostic Interface
+   ============================================ */
+
+.autoclave__troubleshooter-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+}
+
+.autoclave__troubleshooter-button {
+    padding: var(--spacing-lg);
+    background: var(--color-background);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+    text-align: center;
+}
+
+.autoclave__troubleshooter-button:hover {
+    background: var(--color-medical-green);
+    color: white;
+    border-color: var(--color-medical-green);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.autoclave__troubleshooter-button-icon {
+    font-size: var(--font-size-2xl);
+}
+
+.autoclave__troubleshooter-button-text {
+    display: block;
+}
+
+/* Dark mode for troubleshooter buttons */
+[data-theme="dark"] .autoclave__troubleshooter-button {
+    background: #2D3135 !important;
+    border-color: #495057 !important;
+    color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .autoclave__troubleshooter-button:hover {
+    background: linear-gradient(135deg, #00C87F 0%, #00A86B 100%) !important;
+    border-color: #00C87F !important;
+    color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .autoclave__troubleshooter-button-icon {
+    color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .autoclave__troubleshooter-button-text {
+    color: #FFFFFF !important;
+}
+
+/* Troubleshooter Results */
+.autoclave__troubleshooter-results {
+    margin-top: var(--spacing-lg);
+    padding: var(--spacing-xl);
+    background: var(--color-background-alt);
+    border-left: 4px solid var(--color-medical-green);
+    border-radius: var(--radius-md);
+}
+
+.autoclave__troubleshooter-title {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-medical-green);
+    margin-bottom: var(--spacing-md);
+}
+
+.autoclave__troubleshooter-steps {
+    list-style: none;
+    counter-reset: step-counter;
+}
+
+.autoclave__troubleshooter-step {
+    counter-increment: step-counter;
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    background: var(--color-background);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+    position: relative;
+    padding-left: var(--spacing-3xl);
+}
+
+/* Dark mode for troubleshooter results */
+[data-theme="dark"] .autoclave__troubleshooter-results {
+    background: #1A1D20;
+    border-left-color: #00C87F;
+}
+
+[data-theme="dark"] .autoclave__troubleshooter-step {
+    background: #2D3135;
+    border-color: #495057;
+    color: #FFFFFF;
+}
+
+.autoclave__troubleshooter-step::before {
+    content: counter(step-counter);
+    position: absolute;
+    left: var(--spacing-md);
+    top: var(--spacing-md);
+    width: 32px;
+    height: 32px;
+    background: var(--color-medical-green);
+    color: white;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: var(--font-weight-bold);
+}
+
+/* ============================================
+   MATERIAL COMPATIBILITY CHECKER
+   ============================================ */
+
+.autoclave__compatibility-results {
+    margin-top: var(--spacing-xl);
+    padding: var(--spacing-xl);
+    background: var(--color-background-alt);
+    border-radius: var(--radius-lg);
+    border: 2px solid var(--color-medical-green);
+}
+
+.autoclave__compatibility-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-lg);
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+}
+
+.autoclave__compatibility-title {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-medical-green);
+}
+
+.autoclave__compatibility-info {
+    background: white;
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-md);
+    border: 2px solid var(--color-border);
+    margin-bottom: var(--spacing-lg);
+}
+
+.autoclave__compatibility-row {
+    padding: var(--spacing-sm) 0;
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+}
+
+.autoclave__compatibility-row strong {
+    color: var(--color-text-primary);
+    margin-right: var(--spacing-sm);
+}
+
+.autoclave__compatibility-success {
+    padding: var(--spacing-lg);
+    background: rgba(40, 167, 69, 0.1);
+    border: 2px solid var(--color-safety-green);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.autoclave__compatibility-success p {
+    margin-bottom: var(--spacing-md);
+    line-height: 1.6;
+}
+
+.autoclave__compatibility-danger {
+    padding: var(--spacing-lg);
+    background: rgba(220, 53, 69, 0.1);
+    border: 2px solid var(--color-safety-red);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.autoclave__compatibility-danger p {
+    margin-bottom: var(--spacing-md);
+    line-height: 1.6;
+    color: var(--color-safety-red);
+}
+
+/* Dark mode for compatibility checker */
+[data-theme="dark"] .autoclave__compatibility-results {
+    background: #1A1D20;
+    border-color: #00C87F;
+}
+
+[data-theme="dark"] .autoclave__compatibility-info {
+    background: #2D3135;
+    border-color: #495057;
+}
+
+[data-theme="dark"] .autoclave__compatibility-success {
+    background: rgba(40, 167, 69, 0.2);
+}
+
+[data-theme="dark"] .autoclave__compatibility-danger {
+    background: rgba(220, 53, 69, 0.2);
+}
+
+[data-theme="dark"] .autoclave__compatibility-danger p {
+    color: #FF6B6B;
+}
+
+/* ============================================
+   QUICK REFERENCE TABS
+   Medical Reference Guide
+   ============================================ */
+
+.autoclave__tabs {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+    border-bottom: 2px solid var(--color-border);
+    flex-wrap: wrap;
+}
+
+.autoclave__tab-button {
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: transparent;
+    border: none;
+    border-bottom: 3px solid transparent;
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    position: relative;
+    top: 2px;
+}
+
+.autoclave__tab-button:hover {
+    color: var(--color-medical-green);
+}
+
+.autoclave__tab-button--active,
+.autoclave__tab-button.active {
+    color: var(--color-medical-green);
+    border-bottom-color: var(--color-medical-green);
+}
+
+.autoclave__tab-content {
+    display: none;
+}
+
+.autoclave__tab-content--active,
+.autoclave__tab-content.active {
+    display: block;
+    animation: fadeIn var(--transition-base);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Reference Tables */
+.autoclave__reference-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--spacing-lg) 0;
+}
+
+.autoclave__reference-table th {
+    background: var(--color-medical-green);
+    color: white;
+    padding: var(--spacing-md);
+    text-align: left;
+    font-weight: var(--font-weight-semibold);
+    border: 1px solid var(--color-medical-green-dark);
+}
+
+.autoclave__reference-table td {
+    padding: var(--spacing-md);
+    border: 1px solid var(--color-border);
+    background: var(--color-background);
+}
+
+.autoclave__reference-table tr:nth-child(even) td {
+    background: var(--color-background-alt);
+}
+
+/* Reference Cards */
+.autoclave__reference-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.autoclave__reference-card {
+    background: white;
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-md);
+    border: 2px solid var(--color-border);
+    transition: all var(--transition-base);
+}
+
+.autoclave__reference-card:hover {
+    border-color: var(--color-medical-green);
+    box-shadow: var(--shadow-md);
+}
+
+.autoclave__reference-card h4 {
+    color: var(--color-medical-green);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-md);
+}
+
+.autoclave__reference-card p {
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.6;
+}
+
+.autoclave__reference-note {
+    margin-top: var(--spacing-lg);
+    padding: var(--spacing-md);
+    background: rgba(0, 168, 107, 0.1);
+    border-left: 4px solid var(--color-medical-green);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
+}
+
+/* Maintenance Checklist */
+.autoclave__maintenance-checklist {
+    padding: var(--spacing-lg);
+}
+
+.autoclave__maintenance-checklist h4 {
+    color: var(--color-medical-green);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    margin: var(--spacing-lg) 0 var(--spacing-md) 0;
+    padding-top: var(--spacing-lg);
+    border-top: 2px solid var(--color-border);
+}
+
+.autoclave__maintenance-checklist h4:first-child {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+}
+
+/* Dark mode for reference guide */
+[data-theme="dark"] .autoclave__reference-card {
+    background: #2D3135;
+    border-color: #495057;
+}
+
+[data-theme="dark"] .autoclave__reference-table td {
+    background: #2D3135;
+    border-color: #495057;
+}
+
+[data-theme="dark"] .autoclave__reference-table tr:nth-child(even) td {
+    background: #1A1D20;
+}
+
+[data-theme="dark"] .autoclave__reference-note {
+    background: rgba(0, 200, 127, 0.2);
+    border-left-color: #00C87F;
+}
+
+/* ============================================
+   EDUCATIONAL CARDS
+   Medical Information Display
+   ============================================ */
+
+.autoclave__education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-2xl);
+}
+
+.autoclave__education-card {
+    background: var(--color-background);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    transition: all var(--transition-base);
+    box-shadow: var(--shadow-sm);
+}
+
+.autoclave__education-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-5px);
+    border-color: var(--color-medical-green);
+}
+
+.autoclave__education-card-icon {
+    font-size: var(--font-size-4xl);
+    margin-bottom: var(--spacing-md);
+    display: block;
+}
+
+.autoclave__education-card-title {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-medical-green);
+    margin-bottom: var(--spacing-md);
+}
+
+.autoclave__education-card-content {
+    font-size: var(--font-size-base);
+    color: var(--color-text-primary);
+    line-height: 1.6;
+}
+
+.autoclave__education-card-content ul {
+    padding-left: var(--spacing-lg);
+    margin-top: var(--spacing-md);
+}
+
+.autoclave__education-card-content li {
+    margin-bottom: var(--spacing-sm);
+}
+
+/* ============================================
+   SAFETY DISCLAIMERS
+   Critical Medical Warnings
+   ============================================ */
+
+.autoclave__disclaimer-box {
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--spacing-xl);
+    border: 2px solid;
+}
+
+.autoclave__disclaimer-box--critical {
+    background: #FFF3CD;
+    border-color: var(--color-safety-orange);
+    color: #000000;
+}
+
+.autoclave__disclaimer-box--standards {
+    background: #D1ECF1;
+    border-color: var(--color-safety-blue);
+    color: #000000;
+}
+
+.autoclave__disclaimer-title {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    color: #000000;
+}
+
+.autoclave__disclaimer-content p {
+    margin-bottom: var(--spacing-md);
+    line-height: 1.6;
+    color: #000000;
+}
+
+.autoclave__disclaimer-content p:last-child {
+    margin-bottom: 0;
+}
+
+.autoclave__disclaimer-content strong {
+    font-weight: var(--font-weight-bold);
+    color: var(--color-safety-red);
+}
+
+/* ============================================
+   FOOTER SECTION
+   ============================================ */
+
+.autoclave__footer {
+    background: var(--gradient-header);
+    border-top: 3px solid var(--color-medical-green);
+    padding: var(--spacing-2xl) var(--spacing-md);
+    margin-top: var(--spacing-3xl);
+}
+
+.autoclave__footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Email Capture Section */
+.autoclave__email-section {
+    background: var(--color-background);
+    border: 2px solid var(--color-medical-green);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
+}
+
+.autoclave__email-title {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-medical-green);
+    margin-bottom: var(--spacing-sm);
+}
+
+.autoclave__email-subtitle {
+    font-size: var(--font-size-base);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-lg);
+}
+
+.autoclave__email-form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.autoclave__email-input-group {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.autoclave__email-input {
+    flex: 1;
+    padding: var(--spacing-md);
+    font-size: var(--font-size-base);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-background);
+    color: var(--color-text-primary);
+    transition: all var(--transition-fast);
+}
+
+.autoclave__email-input:focus {
+    outline: none;
+    border-color: var(--color-medical-green);
+    box-shadow: 0 0 0 4px rgba(0, 168, 107, 0.1);
+}
+
+.autoclave__email-submit {
+    padding: var(--spacing-md) var(--spacing-xl);
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    white-space: nowrap;
+}
+
+.autoclave__email-submit:hover {
+    background: var(--color-medical-green-light);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.autoclave__email-trust-signals {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+.autoclave__trust-signal {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+}
+
+/* Footer Info */
+.autoclave__footer-info {
+    text-align: center;
+    padding: var(--spacing-xl) 0;
+    border-top: 1px solid var(--color-border);
+}
+
+.autoclave__footer-logo {
+    height: 60px;
+    width: auto;
+    margin-bottom: var(--spacing-md);
+}
+
+.autoclave__footer-text {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-md);
+}
+
+.autoclave__footer-text:last-child {
+    margin-bottom: 0;
+}
+
+.autoclave__footer-link {
+    color: var(--color-medical-green);
+    text-decoration: none;
+    font-weight: var(--font-weight-semibold);
+    transition: color var(--transition-fast);
+}
+
+.autoclave__footer-link:hover {
+    color: var(--color-medical-green-dark);
+    text-decoration: underline;
+}
+
+/* Ko-fi Button */
+.autoclave__kofi-container {
+    text-align: center;
+    padding: var(--spacing-xl);
+    background: var(--color-background);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.autoclave__kofi-text {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text-primary);
+}
+
+.autoclave__kofi-image {
+    height: 48px;
+    width: auto;
+    transition: transform var(--transition-base);
+}
+
+.autoclave__kofi-image:hover {
+    transform: scale(1.05);
+}
+
+/* Ko-fi Section (Footer) - Alias for kofi-container */
+.autoclave__kofi-section {
+    text-align: center;
+    padding: var(--spacing-xl);
+    background: var(--color-background);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.autoclave__kofi-link {
+    display: inline-block;
+    transition: transform var(--transition-base);
+}
+
+.autoclave__kofi-link:hover {
+    transform: translateY(-3px);
+}
+
+/* Footer Links */
+.autoclave__footer-links {
+    text-align: center;
+    padding: var(--spacing-lg) 0;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: var(--spacing-lg);
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-xl);
+    flex-wrap: wrap;
+}
+
+/* Copyright */
+.autoclave__copyright {
+    text-align: center;
+    padding: var(--spacing-lg) 0;
+}
+
+.autoclave__copyright p {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.6;
+}
+
+.autoclave__copyright p:last-child {
+    margin-bottom: 0;
+}
+
+.autoclave__copyright-disclaimer {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    font-style: italic;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ============================================
+   EMBED MODAL
+   ============================================ */
+
+.autoclave__modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: var(--z-modal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-lg);
+}
+
+.autoclave__modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    z-index: var(--z-modal-backdrop);
+}
+
+.autoclave__modal-content {
+    position: relative;
+    z-index: var(--z-modal);
+    background: var(--color-background);
+    border: 3px solid var(--color-medical-green);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-2xl);
+    max-width: 700px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: var(--shadow-xl);
+}
+
+.autoclave__modal-close {
+    position: absolute;
+    top: var(--spacing-lg);
+    right: var(--spacing-lg);
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: var(--color-clinical-gray);
+    color: var(--color-text-primary);
+    font-size: var(--font-size-2xl);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.autoclave__modal-close:hover {
+    background: var(--color-safety-red);
+    color: white;
+    transform: rotate(90deg);
+}
+
+.autoclave__modal-title {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-medical-green);
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
+}
+
+/* Embed Code Section */
+.autoclave__embed-section {
+    margin-bottom: var(--spacing-xl);
+}
+
+.autoclave__embed-subtitle {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-md);
+}
+
+.autoclave__embed-code-container {
+    background: var(--color-clinical-gray);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.autoclave__embed-code {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-primary);
+    word-break: break-all;
+    display: block;
+    line-height: 1.6;
+}
+
+.autoclave__copy-button {
+    width: 100%;
+    padding: var(--spacing-md);
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+}
+
+.autoclave__copy-button:hover {
+    background: var(--color-medical-green-light);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.autoclave__copy-button--success {
+    background: var(--color-safety-green);
+}
+
+/* Modal Email Section */
+.autoclave__modal-email-section {
+    background: var(--color-clinical-gray);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+}
+
+.autoclave__modal-email-title {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+}
+
+.autoclave__modal-email-form {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.autoclave__modal-email-input {
+    flex: 1;
+    padding: var(--spacing-md);
+    font-size: var(--font-size-base);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-background);
+    color: var(--color-text-primary);
+}
+
+.autoclave__modal-email-input:focus {
+    outline: none;
+    border-color: var(--color-medical-green);
+}
+
+.autoclave__modal-email-submit {
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius-md);
+    font-weight: var(--font-weight-semibold);
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.autoclave__modal-email-submit:hover {
+    background: var(--color-medical-green-light);
+}
+
+/* Modal Ko-fi Section */
+.autoclave__modal-kofi-section {
+    text-align: center;
+}
+
+.autoclave__modal-kofi-text {
+    font-size: var(--font-size-base);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-md);
+}
+
+.autoclave__modal-kofi-image {
+    height: 40px;
+    width: auto;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   Mobile-First Clinical Interface
+   ============================================ */
+
+@media (max-width: 768px) {
+    /* Header adjustments */
+    .autoclave__header-content {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+
+    .autoclave__main-title {
+        font-size: var(--font-size-2xl);
+    }
+
+    .autoclave__header-controls {
+        justify-content: center;
+    }
+
+    /* Form grid single column */
+    .autoclave__form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Results grid single column */
+    .autoclave__results-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Education grid single column */
+    .autoclave__education-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Troubleshooter grid single column */
+    .autoclave__troubleshooter-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Email input stack vertically */
+    .autoclave__email-input-group {
+        flex-direction: column;
+    }
+
+    .autoclave__email-trust-signals {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+
+    /* Modal adjustments */
+    .autoclave__modal-content {
+        padding: var(--spacing-lg);
+    }
+
+    .autoclave__modal-email-form {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Reduce spacing on small screens */
+    .autoclave__main {
+        padding: var(--spacing-lg) var(--spacing-sm);
+    }
+
+    .autoclave__section {
+        padding: var(--spacing-lg);
+    }
+
+    .autoclave__main-title {
+        font-size: var(--font-size-xl);
+    }
+
+    /* Smaller buttons */
+    .autoclave__calculate-button {
+        font-size: var(--font-size-lg);
+        padding: var(--spacing-md) var(--spacing-lg);
+    }
+
+    /* Smaller result cards */
+    .autoclave__result-value {
+        font-size: var(--font-size-2xl);
+    }
+}
+
+/* ============================================
+   PRINT STYLES
+   Clinical Documentation Printing
+   ============================================ */
+
+@media print {
+    /* Hide non-essential elements */
+    .autoclave__header-controls,
+    .autoclave__embed-button,
+    .autoclave__dark-mode-toggle,
+    .autoclave__footer,
+    .autoclave__modal,
+    .autoclave__kofi-container,
+    .autoclave__email-section {
+        display: none !important;
+    }
+
+    /* Optimize for printing */
+    body {
+        background: white;
+        color: black;
+    }
+
+    .autoclave__section {
+        page-break-inside: avoid;
+        border: 2px solid #000;
+        box-shadow: none;
+    }
+
+    .autoclave__results {
+        page-break-inside: avoid;
+    }
+
+    /* Show all collapsible content */
+    .autoclave__collapsible-content {
+        display: block !important;
+    }
+
+    /* Simplify colors for printing */
+    .autoclave__main-title,
+    .autoclave__section-title {
+        color: #000;
+    }
+}
+
+/* ============================================
+   ACCESSIBILITY ENHANCEMENTS
+   WCAG 2.1 AA Compliance
+   ============================================ */
+
+/* Focus visible styles */
+*:focus-visible {
+    outline: 3px solid var(--color-medical-green);
+    outline-offset: 2px;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .autoclave__section {
+        border-width: 3px;
+    }
+
+    .autoclave__button,
+    .autoclave__input,
+    .autoclave__select {
+        border-width: 3px;
+    }
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mb-0 { margin-bottom: 0; }
+.mb-sm { margin-bottom: var(--spacing-sm); }
+.mb-md { margin-bottom: var(--spacing-md); }
+.mb-lg { margin-bottom: var(--spacing-lg); }
+.mb-xl { margin-bottom: var(--spacing-xl); }
+
+/* ============================================
+   MORE TOOLS NAVIGATION SECTION
+   ============================================ */
+
+.autoclave-calc__more-tools {
+    padding: 48px 0;
+    background-color: var(--color-background-elevated);
+    border-top: 1px solid var(--color-border);
+    margin-top: 0;
+}
+
+.autoclave-calc__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.autoclave-calc__section-title-large {
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    color: var(--color-text-primary);
+    margin-bottom: 12px;
+    line-height: 1.2;
+}
+
+.autoclave-calc__section-subtitle-large {
+    font-size: 16px;
+    text-align: center;
+    color: var(--color-text-secondary);
+    margin-bottom: 32px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.autoclave-calc__tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.autoclave-calc__tool-card {
+    background: var(--color-background-card);
+    border: 2px solid var(--color-border);
+    border-radius: 12px;
+    padding: 24px;
+    text-decoration: none;
+    color: var(--color-text-primary);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.autoclave-calc__tool-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    border-color: var(--color-primary);
+}
+
+.autoclave-calc__tool-card--active {
+    border-color: var(--color-primary);
+    background: linear-gradient(135deg, rgba(6, 147, 227, 0.1) 0%, rgba(155, 81, 224, 0.1) 100%);
+    cursor: default;
+}
+
+.autoclave-calc__tool-card--active:hover {
+    transform: none;
+}
+
+.autoclave-calc__tool-card--coming-soon {
+    opacity: 0.7;
+    cursor: default;
+    border-style: dashed;
+}
+
+.autoclave-calc__tool-card--coming-soon:hover {
+    transform: none;
+    border-color: var(--color-border);
+}
+
+.autoclave-calc__tool-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    display: block;
+    line-height: 1;
+}
+
+.autoclave-calc__tool-card-title {
+    margin: 8px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+.autoclave-calc__tool-card-description {
+    margin: 0;
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+}
+
+.autoclave-calc__current-badge {
+    display: inline-block;
+    background: var(--color-primary);
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 12px;
+    margin-top: 12px;
+}
+
+.autoclave-calc__coming-soon-badge {
+    display: inline-block;
+    background: var(--color-accent);
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 12px;
+    margin-top: 12px;
+}
+
+.autoclave-calc__more-tools-cta {
+    text-align: center;
+    padding-top: 24px;
+    border-top: 1px solid var(--color-border);
+}
+
+.autoclave-calc__cta-text {
+    font-size: 16px;
+    color: var(--color-text-secondary);
+    margin: 0;
+}
+
+.autoclave-calc__cta-link {
+    color: var(--color-primary);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.autoclave-calc__cta-link:hover {
+    text-decoration: underline;
+    color: var(--color-primary-light);
+}
+
+/* Responsive More Tools */
+@media (max-width: 768px) {
+    .autoclave-calc__tools-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .autoclave-calc__section-title-large {
+        font-size: 24px;
+    }
+
+    .autoclave-calc__more-tools {
+        padding: 32px 0;
+    }
+}
+
+/* ============================================
+   END OF STYLES
+   ============================================ *//* =====================================================
+   EMBED MODE STYLES (REQUIRED FOR ALL TOOLS)
+   ===================================================== */
+
+body.embed-mode {
+  margin: 0;
+  padding: 0;
+  background: var(--bg-secondary);
+}
+
+/* Embed Header */
+.embed-header {
+  background: var(--bg-primary);
+  border-bottom: 2px solid var(--border-primary);
+  padding: var(--spacing-sm) var(--spacing-md);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow-sm);
+}
+
+.embed-header-content {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.embed-logo {
+  height: 32px;
+  width: auto;
+}
+
+.embed-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  flex: 1;
+}
+
+.embed-header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+/* Tool-specific action buttons in header (e.g., Save, Download) */
+.embed-action-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  background: var(--artist-purple);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.embed-action-btn:hover {
+  background: #6D28D9;
+  transform: translateY(-1px);
+}
+
+.embed-dark-toggle {
+  background: var(--bg-secondary);
+  border: 2px solid var(--border-primary);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-xs);
+  cursor: pointer;
+  font-size: 18px;
+  transition: var(--transition);
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.embed-dark-toggle:hover {
+  border-color: var(--artist-purple);
+  transform: scale(1.05);
+}
+
+/* Embed Main Content */
+.embed-main {
+  padding: var(--spacing-md);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Embed Footer */
+.embed-footer {
+  background: var(--bg-primary);
+  border-top: 2px solid var(--border-primary);
+  padding: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+}
+
+.embed-footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.embed-footer-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: var(--transition);
+  border: 2px solid transparent;
+}
+
+.embed-footer-btn--tools {
+  background: var(--artist-purple);
+  color: white;
+}
+
+.embed-footer-btn--tools:hover {
+  background: #6D28D9;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.embed-footer-btn--support {
+  background: #FF5E5B;
+  color: white;
+}
+
+.embed-footer-btn--support:hover {
+  background: #E54845;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.embed-footer-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+
+.embed-footer-link:hover {
+  color: var(--artist-purple);
+  text-decoration: underline;
+}
+
+/* Mobile Responsive for Embed */
+@media (max-width: 768px) {
+  .embed-header-content {
+    flex-wrap: wrap;
+  }
+
+  .embed-logo {
+    height: 28px;
+  }
+
+  .embed-title {
+    font-size: 1rem;
+  }
+
+  .embed-header-actions {
+    flex-wrap: wrap;
+  }
+
+  .embed-footer-content {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .embed-footer-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .embed-title {
+    font-size: 0.9rem;
+    width: 100%;
+    order: -1;
+  }
+
+  .btn-text {
+    font-size: 0.85rem;
+  }
+}
+
+
+/* ===================================
+   Feedback Card (Standardized)
+   =================================== */
+.feedback-card {
+  background: var(--bg-primary);
+  border-radius: var(--border-radius-lg, 12px);
+  padding: var(--spacing-xl, 2.5rem);
+  box-shadow: var(--shadow-lg, 0 4px 20px rgba(0, 0, 0, 0.1));
+  max-width: 900px;
+  margin: 0 auto;
+  border: 3px solid #9b51e0;
+}
+
+/* Dark mode - subtle border */
+[data-theme="dark"] .feedback-card {
+  border: 2px solid var(--border-primary);
+}
+
+.feedback-header {
+  text-align: center;
+  margin-bottom: var(--spacing-xl, 2.5rem);
+}
+
+.feedback-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-md, 1.5rem);
+  line-height: 1.2;
+}
+
+.feedback-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-md, 1.5rem);
+}
+
+.feedback-callout {
+  background: var(--bg-secondary);
+  padding: var(--spacing-md, 1.5rem);
+  border-radius: var(--border-radius, 8px);
+  border-left: 4px solid var(--artist-purple, #9b51e0);
+  font-size: 1rem;
+  color: var(--text-primary);
+  margin-top: var(--spacing-md, 1.5rem);
+}
+
+.feedback-callout strong {
+  color: var(--artist-purple, #9b51e0);
+}
+
+/* Form Styles */
+.feedback-form {
+  margin-top: var(--spacing-lg, 2rem);
+}
+
+.feedback-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-lg, 2rem);
+  margin-bottom: var(--spacing-lg, 2rem);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs, 0.5rem);
+}
+
+.form-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: var(--spacing-sm, 1rem) var(--spacing-md, 1.5rem);
+  border: 2px solid var(--border-primary);
+  border-radius: var(--border-radius, 8px);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-family: inherit;
+  transition: var(--transition, all 0.3s);
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--artist-purple, #9b51e0);
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .feedback-card {
+    padding: var(--spacing-lg, 2rem);
+  }
+
+  .feedback-title {
+    font-size: 1.5rem;
+  }
+
+  .feedback-subtitle {
+    font-size: 1rem;
+  }
+
+  .feedback-form-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md, 1.5rem);
+  }
+}
