@@ -434,38 +434,13 @@ body {
     font-size: var(--font-size-lg);
 }
 
-/* Ko-fi Button */
-.autoclave__kofi-button {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-sm);
-    background: #FF5E5B;
-    color: white;
-    border: none;
-    border-radius: var(--radius-full);
-    padding: var(--spacing-sm) var(--spacing-lg);
-    font-size: var(--font-size-base);
-    font-weight: var(--font-weight-semibold);
-    cursor: pointer;
-    transition: all var(--transition-base);
-    box-shadow: var(--shadow-sm);
-    text-decoration: none;
-}
+/
 
-.autoclave__kofi-button:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
-    background: #FF4E4B;
-}
 
-.kofi-icon {
-    font-size: var(--font-size-lg);
-    line-height: 1;
-}
 
-.kofi-text {
-    white-space: nowrap;
-}
+
+
+
 
 /* Dark Mode Toggle */
 .autoclave__dark-mode-toggle {
@@ -1939,48 +1914,19 @@ body {
     text-decoration: underline;
 }
 
-/* Ko-fi Button */
-.autoclave__kofi-container {
-    text-align: center;
-    padding: var(--spacing-xl);
-    background: var(--color-background);
-    border-radius: var(--radius-lg);
-    margin-bottom: var(--spacing-xl);
-}
+/
 
-.autoclave__kofi-text {
-    font-size: var(--font-size-lg);
-    margin-bottom: var(--spacing-md);
-    color: var(--color-text-primary);
-}
 
-.autoclave__kofi-image {
-    height: 48px;
-    width: auto;
-    transition: transform var(--transition-base);
-}
 
-.autoclave__kofi-image:hover {
-    transform: scale(1.05);
-}
 
-/* Ko-fi Section (Footer) - Alias for kofi-container */
-.autoclave__kofi-section {
-    text-align: center;
-    padding: var(--spacing-xl);
-    background: var(--color-background);
-    border-radius: var(--radius-lg);
-    margin-bottom: var(--spacing-xl);
-}
 
-.autoclave__kofi-link {
-    display: inline-block;
-    transition: transform var(--transition-base);
-}
 
-.autoclave__kofi-link:hover {
-    transform: translateY(-3px);
-}
+
+/
+
+
+
+
 
 /* Footer Links */
 .autoclave__footer-links {
@@ -2201,21 +2147,11 @@ body {
     background: var(--color-medical-green-light);
 }
 
-/* Modal Ko-fi Section */
-.autoclave__modal-kofi-section {
-    text-align: center;
-}
+/
 
-.autoclave__modal-kofi-text {
-    font-size: var(--font-size-base);
-    color: var(--color-text-secondary);
-    margin-bottom: var(--spacing-md);
-}
 
-.autoclave__modal-kofi-image {
-    height: 40px;
-    width: auto;
-}
+
+
 
 /* ============================================
    RESPONSIVE DESIGN
@@ -2316,7 +2252,6 @@ body {
     .autoclave__dark-mode-toggle,
     .autoclave__footer,
     .autoclave__modal,
-    .autoclave__kofi-container,
     .autoclave__email-section {
         display: none !important;
     }
