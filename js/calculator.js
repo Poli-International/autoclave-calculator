@@ -509,7 +509,14 @@ function handleCalculatorSubmit(event) {
 
     // Validate inputs
     if (!autoclaveType || !loadType || !loadSize) {
-        alert('Please fill in all required fields');
+        const resultsDiv = document.getElementById('calculator-results');
+        if (typeof InputGuards !== 'undefined' && InputGuards.formatError && resultsDiv) {
+            resultsDiv.style.display = 'block';
+            resultsDiv.innerHTML = InputGuards.formatError('Please select autoclave type, load type, and load size.');
+            resultsDiv.scrollIntoView({ behavior: 'smooth' });
+        } else {
+            alert('Please fill in all required fields');
+        }
         return;
     }
 
@@ -1252,9 +1259,18 @@ function handleLoadOptimizationSubmit(event) {
     const depthUnit = document.getElementById('chamber-depth-unit').value;
     const heightUnit = document.getElementById('chamber-height-unit').value;
 
-    // Validate inputs
-    if (!widthValue || !depthValue || !heightValue || !numInstruments) {
-        alert('Please fill in all required fields');
+    // Validate inputs (use InputGuards for inline error rendering)
+    var errors = [];
+    if (isNaN(widthValue) || widthValue <= 0) errors.push('Enter a valid chamber width greater than zero.');
+    if (isNaN(depthValue) || depthValue <= 0) errors.push('Enter a valid chamber depth greater than zero.');
+    if (isNaN(heightValue) || heightValue <= 0) errors.push('Enter a valid chamber height greater than zero.');
+    if (isNaN(numInstruments) || numInstruments < 1) errors.push('Enter the number of instruments (minimum 1).');
+
+    if (errors.length) {
+        const resultsDiv = document.getElementById('optimization-results');
+        resultsDiv.style.display = 'block';
+        resultsDiv.innerHTML = '<div class="autoclave__optimization-header"><h3 class="autoclave__optimization-title">Validation Error</h3></div>' +
+          '<div class="poli-err-card" role="alert" style="margin:1rem">' + errors.join('<br>') + '</div>';
         return;
     }
 
@@ -1266,6 +1282,15 @@ function handleLoadOptimizationSubmit(event) {
     // Calculate chamber volume and capacity
     const volumeCubicInches = widthInches * depthInches * heightInches;
     const volumeLiters = volumeCubicInches * 0.0163871;
+
+    // SAFETY-CRITICAL: Chamber volume must be > 0
+    if (volumeCubicInches <= 0) {
+        const resultsDiv = document.getElementById('optimization-results');
+        resultsDiv.style.display = 'block';
+        resultsDiv.innerHTML = '<div class="autoclave__optimization-header"><h3 class="autoclave__optimization-title">Error</h3></div>' +
+          '<div class="poli-err-card" role="alert" style="margin:1rem">Chamber volume is zero — check your dimensions and units.</div>';
+        return;
+    }
 
     // Calculate recommended load capacity (don't exceed 75% for optimal steam circulation)
     const maxInstruments = Math.floor(volumeCubicInches / 10); // Rough estimate: 10 cubic inches per instrument
