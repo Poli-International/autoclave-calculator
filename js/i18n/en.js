@@ -2952,6 +2952,10 @@
     "🧹 Clean Up Expired Historical Records": "🧹 Clean Up Expired Historical Records",
     "🧻": "🧻",
     "confirm.cleanup.prune.records": "Found {totalPruned} total records older than 3 years (older than {cutoffStr}):\n• {prunedSporeCount} Spore Test Logs\n• {prunedCycleCount} Sterilization Batches\n\nProceed with permanent cleanup to free local storage?",
-    "confirm.restore.safety.backup": "Restore safety backup from {exportedAt}? This will import {cycleCount} cycles and {sporeCount} spore tests."
+    "confirm.restore.safety.backup": "Restore safety backup from {exportedAt}? This will import {cycleCount} cycles and {sporeCount} spore tests.",
+    "header.dailyTarget": "Daily Target",
+    "header.settings": "Settings",
+    "header.shortcuts": "Shortcuts",
+    "opt.bioflex.body.jewelry": "BioFlex® body jewellery"
 });
 })();
