@@ -4226,7 +4226,7 @@ function handleEmailSubmit(event) {
 
     // Disable button and show loading state
     submitButton.disabled = true;
-    const originalText = submitButton.textContent;
+    const originalText = submitButton.innerHTML;
     submitButton.textContent = 'Subscribing...';
 
     // Simulate API call (replace with actual endpoint)
@@ -4240,7 +4240,7 @@ function handleEmailSubmit(event) {
         // Reset after 2 seconds
         setTimeout(() => {
             submitButton.disabled = false;
-            submitButton.textContent = originalText;
+            submitButton.innerHTML = originalText;
         }, 2000);
 
         // Show thank you message
